@@ -1,0 +1,3 @@
+- [ ] Fix home page for quartz
+- [ ] Find cute page emblem
+- [ ] write more notes

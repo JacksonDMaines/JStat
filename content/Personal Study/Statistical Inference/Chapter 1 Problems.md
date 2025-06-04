@@ -1,6 +1,3 @@
----
-dg-publish: true
----
 ### 1.1 
 	a. Should be 2^4 possible combination
 
