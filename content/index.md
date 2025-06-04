@@ -1,3 +1,12 @@
+These are my notes. :)
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+[[Courses| UTHealth Notes]]
+
+
+[[Personal Study| Personal Studying Notes]]
+
+
+just in case you forget to sync
+	node.js
+	cd quartz
+	npx quartz sync
