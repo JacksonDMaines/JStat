@@ -9,4 +9,5 @@ These are my notes. :)
 just in case you forget to sync
 	node.js
 	cd quartz
+	Set-ExecutionPolicy RemoteSigned –Scope Process
 	npx quartz sync
