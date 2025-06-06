@@ -6,8 +6,14 @@ These are my notes. :)
 [[Personal Study| Personal Studying Notes]]
 
 
-just in case you forget to sync
-	node.js
-	cd quartz
-	Set-ExecutionPolicy RemoteSigned –Scope Process
-	npx quartz sync
+
+
+
+Just in case you forget how to sync.
+```node.js
+cd quartz
+	
+Set-ExecutionPolicy RemoteSigned –Scope Process
+	
+npx quartz sync
+```

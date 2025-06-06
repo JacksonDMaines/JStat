@@ -163,7 +163,25 @@ $$
 $$
 
 ### 2.2
-a.)
+a.) $Y=X^2$ and $f_{x}(x)=1 \space for \space 0<x<1$
+Find pdf of Y
+Let
+	$y=x^2=g(x)$ then,
+		$g'(x)=2x>0 \space \forall x \in(0,1) \implies montone$
+			I really need to figure out if this is true....
+So
+	$g^{-1}(y)=y^{1/2}$ then, 
+		$\frac{d}{dx}g^{-1}(x)=\frac{1}{2}y^{-1/2}$
+Thus
+$$
+f_{Y}(y)=\begin{cases}
+ (1)\left( \frac{1}{2}y^{-1/2} \right)&0<y<1 \\
+0& other
+\end{cases}
+$$
+b.)  $Y=-\log(x)$ and $f_{X}(x)=\frac{(n+m+1)!}{n!m!}x^n(1-x)^m\space \space 0<x<1$
+
+
 
 
 
