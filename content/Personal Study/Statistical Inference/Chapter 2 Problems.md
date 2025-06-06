@@ -111,4 +111,61 @@ $$
 
 
 
+c.) $Y=X^2$ and $f_{X}(x)=30(x^2)(1-x)^2$ for $0<x<1$
+Find pdf of Y
+
+So let $y=x^2=g(x)$, then
+	 $g'(x)=2x>0 \space \forall x\in (0,1) \implies monotone$
+		 I think? There is probably another thing you gotta prove?
+then
+$g^{-1}(y)=y^{1/2}\implies f_{x}(g^{-1}(y))=30(y^{1/2})^2(1-y^{1/2})^2$
+and
+$\frac{d}{dx}g^{-1}(y)=\frac{1}{2}y^{-1/2}$
+So
+
+$$
+f_{Y}(y)=\begin{cases}
+30(y^{1/2})^2(1-y^{1/2})^2 &0<y<1 \\
+0 & other
+\end{cases}
+$$
+lets reduce
+$$
+\begin{aligned}
+&=30(y^{1/2})^2(1-y^{1/2})^2 \\
+&=15y(1-y^{1/2})^2y^{-1/2} \\
+&=15y^{1/2}(1-y^{1/2})^2 \\
+&=15y^{1/2}(1-2y^{1/2}+y) \\
+&=15(y^{1/2}-2y+y^{3/2})
+
+\end{aligned}
+
+$$
+reduce to this point for easier integration. So it should be this now.
+$$
+f_{Y}(y)=\begin{cases} 
+15(y^{1/2}-2y+y^{3/2}) & 0<y<1 \\
+0 & other \\
+
+\end{cases}
+$$
+Lets prove this pdf integrates to 1.
+$$
+\begin{aligned}
+&\int f_{Y}(y)dy = \int_{0}^{1}15(y^{1/2}-2y+y^{3/2})dy \\
+& = 15\int_{0}^{1}y^{1/2}-2y+y^{3/2}dy \\
+& = 15\left[ \frac{2}{3}y^{3/2} - y^2+\frac{2}{5}y^{5/2} \vert_{0}^{1}\right] \\
+&=15\left[ \frac{2}{3}(1)^{3/2} -(1)^2+\frac{2}{5}(1)^{5/2}-0 \right] \\
+&=15\left[ \frac{2}{3}-1+\frac{2}{5} \right] = 15\left( \frac{1}{15} \right) = 1
+
+\end{aligned}
+
+$$
+
+### 2.2
+a.)
+
+
+
+
 
