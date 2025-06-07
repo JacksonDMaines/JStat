@@ -1,4 +1,4 @@
-
+[[SI Notes#Chapter 2|Chapter 2 Notes]]
 ### 2.1
 a.) $Y=X^3$ and $f_{X}(x)=42x^5(1-x)$ for 0<x<1
 Find PDF of Y? 

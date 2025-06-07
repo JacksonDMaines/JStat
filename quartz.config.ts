@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "JacksonDMaines.github.io/JStat",
+    baseUrl: "JacksonDMaines.github.io/JStat/Welcome.md",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {

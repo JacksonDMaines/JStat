@@ -131,5 +131,40 @@ $$
 F_{X}(x)=P_{X}(X\leq x), \space \forall x
 
 $$
+## Theorem 1.5.3 
+The function $F(x)$ is a cdf iff the following conditions hold
+- a.)$\lim_{ x \to -\infty }F(x)=0$ and $\lim_{ x \to \infty }F(x)=1$
+- b.)$F(x)$ is a nondecreasing function of $x$
+- c.) $F(x)$ is right-continuous; that is, for every number $x_{0}$, $\lim_{ x \downarrow x_{0} }F(x)=F(x_{0})$
 
-## Def page 29
+## Definition 1.5.7
+A random variable $X$ is continuous if $F_{X}(x)$ is continuous function of $x$. A random variable $X$ is discrete if $F_{X}(x)$ is a step function of x.
+
+## Definition 1.5.8
+The random variables $X$ and $Y$ are identically distributed if, for every set $A \in \mathbb{B}^1$, $P(X\in A)=P(Y\in A)$
+
+## Theorem 1.5.10
+The following two statements are equivalent: 
+- a.) The random variables $X$ and $Y$ are identically distributed
+- b.) $F_{X}(x)=F_{Y}(x),\space\forall x$
+
+## Definition 1.6.1
+The probability mass function (pmf) of a discrete random variable $X$ is given by
+$$
+f_{X}(x)=P(X=x), \space \forall x
+$$
+
+## Definition 1.6.3
+The probability density function or pdf, $f_{X}(x)$, of a continuous random variable $X$ is the function that satisfies 
+$$
+F_{X}(x)=\int_{-\infty}^{x}f_{X}(t)dt,\space \forall x
+$$
+
+## Theorem 1.6.5 
+A function $f_{X}(x)$ is a pdf (or pmf) of a random variable $X$ iff
+- a.) $f_{X}(x)\geq 0, \space \forall x$
+- b.) $\sum_{x}f_{X}{x}=1$ (pmf) or $\int_{-\infty}^{\infty}f_{X}(x)dx=1$ (pdf)
+
+# Chapter 2
+
+

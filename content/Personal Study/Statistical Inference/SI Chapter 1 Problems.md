@@ -1,4 +1,6 @@
+[[SI Notes#Chapter 1|Chapter 1 Notes]]
 ### 1.1 
+
 	a. Should be 2^4 possible combination
 
 		S = {HHHH, HHHT, HHTT, HTTT, 
@@ -24,23 +26,23 @@ therefore $x\in(A\cap B^c)$
 
 	b. 
 	
-$B = (B \cap A)\cup(B \cap A^c)$
-We need to prove both directions
-$x \in B \implies x\in (B\cap A) \cup(B \cap A^c)$
-	Let $x \in B$. Then $x\in A$ or $x\in A^c$
-		If $x\in A$, 
-		then $x\in B\cap A$ and $x\notin B\cap A^c$ therefore $x\in (B\cap A) \cup (B \cap A^c)$
-		If $x \in A^c$, 
-		then $x \notin B \cap A$ and $x \in B \cap A^c$ therefore $x\in (B\cap A) \cup (B \cap A^c)$
-	thus $x \in B \implies x\in (B\cap A) \cup(B \cap A^c)$ or $(B\cap A) \cup (B \cap A^c) \subset B$ (This proves right direction)
-$x\in (B\cap A) \cup(B \cap A^c) \implies x\in B$
-	Let $x\in (B\cap A) \cup(B \cap A^c)$, thus $x \in (B \cap A)$ or $x \in (B \cap A^c)$
-		If $x \in (B \cap A)$
-		then $x\in B$ and $x \in A$ 
-		If $x\in (B \cap A^c)$
-		then $x \in B$ and $x \in A^c$
-	in both cases $x \in B$
-	thus $x\in (B\cap A) \cup(B \cap A^c) \implies x\in B$ or $B \subset (B\cap A) \cup(B \cap A^c)$ (This proves left direction)
+- $B = (B \cap A)\cup(B \cap A^c)$
+- We need to prove both directions
+- $x \in B \implies x\in (B\cap A) \cup(B \cap A^c)$
+	- Let $x \in B$. Then $x\in A$ or $x\in A^c$
+		- If $x\in A$, 
+		- then $x\in B\cap A$ and $x\notin B\cap A^c$ therefore $x\in (B\cap A) \cup (B \cap A^c)$
+		- If $x \in A^c$, 
+		- then $x \notin B \cap A$ and $x \in B \cap A^c$ therefore $x\in (B\cap A) \cup (B \cap A^c)$
+	- thus $x \in B \implies x\in (B\cap A) \cup(B \cap A^c)$ or $(B\cap A) \cup (B \cap A^c) \subset B$ (This proves right direction)
+- $x\in (B\cap A) \cup(B \cap A^c) \implies x\in B$
+	- Let $x\in (B\cap A) \cup(B \cap A^c)$, thus $x \in (B \cap A)$ or $x \in (B \cap A^c)$
+		- If $x \in (B \cap A)$
+		- then $x\in B$ and $x \in A$ 
+		- If $x\in (B \cap A^c)$
+		- then $x \in B$ and $x \in A^c$
+	- in both cases $x \in B$
+	- thus $x\in (B\cap A) \cup(B \cap A^c) \implies x\in B$ or $B \subset (B\cap A) \cup(B \cap A^c)$ (This proves left direction)
 Therefore $B \iff (B\cap A) \cup(B \cap A^c)$ or $B = (B \cap A)\cup(B \cap A^c)$
 
 	c.
