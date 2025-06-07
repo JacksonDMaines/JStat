@@ -8,18 +8,18 @@ An *event* is any collection of possible outcomes of an experiment that is, any 
 
 ## Theorem 1.14
 For any three events $A,B,C$ defined on samples space $S$
-	a.) Commutativity: 
-		$A\cup B=B\cup A$
-		$A\cap B=B\cap A$
-	b.) Associativity: 
-		$A\cup(B\cup C)=(A\cup B)\cup C$
-		$A\cap(B\cap C)=(A\cap B)\cap C$ 
-	c.) Distributive Laws
-		$A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$
-		$A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$
-	d.) DeMorgan's Laws
-		$(A\cup B)^c=A^c\cap B^c$
-		$(A\cap B)^c=A^c\cup B^c$
+- a.) Commutativity: 
+	- $A\cup B=B\cup A$
+	- $A\cap B=B\cap A$ 
+- b.) Associativity: 
+	- $A\cup(B\cup C)=(A\cup B)\cup C$
+	- $A\cap(B\cap C)=(A\cap B)\cap C$ 
+- c.) Distributive Laws
+	- $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$
+	- $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$
+- d.) DeMorgan's Laws
+	- $(A\cup B)^c=A^c\cap B^c$
+	- $(A\cap B)^c=A^c\cup B^c$
 
 ## Definition 1.1.5
 Two events $A$ and $B$ are disjoint (or mutually exclusive) if $A\cap B=\emptyset$.The events $A_{1},A_{2,\dots}$ are pairwise disjoint (or mutually exclusive) if $A_{i}\cap A_{j}=\emptyset$   $\forall i \neq j$
@@ -30,17 +30,17 @@ If $A_{1},A_{2},\dots$ are pairwise disjoint and $\bigcup_{i=1}^{\infty}A_{i}=S$
 
 ## Definition 1.2.1 
 A collection of subsets of $S$ is called a *sigma algebra* (or *Borel field*), denoted by $\mathbb{B}$, if it satisfies the following properties:
-	a.) $\emptyset\in\mathbb{B}$
-	b.) if $A\in\mathbb{B}$, then $A^c\in \mathbb{B}$
-		$\mathbb{B}$ is closed under complementation
-	c.) If $A_{1},A_{2},\dots\in\mathbb{B}$, then $\bigcup_{i=1}^{\infty}A_{i}\in\mathbb{B}$
-		$\mathbb{B}$ is closed under countable unions
+- a.) $\emptyset\in\mathbb{B}$
+- b.) if $A\in\mathbb{B}$, then $A^c\in \mathbb{B}$
+	- $\mathbb{B}$ is closed under complementation
+- c.) If $A_{1},A_{2},\dots\in\mathbb{B}$, then $\bigcup_{i=1}^{\infty}A_{i}\in\mathbb{B}$
+	- $\mathbb{B}$ is closed under countable unions
 
 ## Definition 1.2.4
 Given a sample space $S and an associated sigma algebra $\mathbb{B}$, a probability function is a function $P$ with domain $\mathbb{B}$ that satisfies
-	1.) $P(A)\geq 0$ for all $A\in\mathbb{B}$
-	2.) $P(S)=1$
-	3.) If $A_{1},A_{2},\dots\in\mathbb{B}$ are pairwise disjoint, then$P\left( \bigcup_{i=1}^{\infty}A_{i} \right)=\sum_{i=1}^{\infty}P(A_{i})$.
+1.  $P(A)\geq 0$ for all $A\in\mathbb{B}$
+2.  $P(S)=1$
+3.  If $A_{1},A_{2},\dots\in\mathbb{B}$ are pairwise disjoint, then$P\left( \bigcup_{i=1}^{\infty}A_{i} \right)=\sum_{i=1}^{\infty}P(A_{i})$.
 
 ## Theorem 1.2.6
 Let $S=\{s_{1,\dots,S_{n}}\}$ be a finite set. Let $\mathbb{B}$ be any sigma algebra of subsets of $S$. Let $p_{1},..,p_{n}$ be nonnegative numbers that sum to 1. For any $A\in\mathbb{B}$ define $P(A)$ by
@@ -55,21 +55,21 @@ If $A\in \mathbb{B}$ and $B \in \mathbb{B}$ are disjoint, then $P(A\cup B)=P(A) 
 
 ## Theorem 1.2.8
 If P is a probability function and $A$ is any set of $\mathbb{B}$, then
-	a.) $P(\emptyset)=0$
-	b.) $P(A)\leq 1$
-	c.) $P(A^c)=1-P(A)$
+- a.) $P(\emptyset)=0$
+- b.) $P(A)\leq 1$
+- c.) $P(A^c)=1-P(A)$
 
 ## Theorem 1.2.9
 If $P$ is a probability function and $A$ and $B$ are any sets in $\mathbb{B}$, then 
-	a.) $P(B\cap A^c)=P(B)-P(A\cap B)$
-	b.) $P(A\cup B)=P(A)+P(B)-P(A\cap B)$
-	c.) If $A\subset B$, then $P(A)\leq P(B)$
+- a.) $P(B\cap A^c)=P(B)-P(A\cap B)$
+- b.) $P(A\cup B)=P(A)+P(B)-P(A\cap B)$
+- c.) If $A\subset B$, then $P(A)\leq P(B)$
 
 ## Theorem 1.2.11 
 If $P$ is a probability function, then
-	a.) $P(A)=\sum_{i=1}^{\infty}P(A\cap C_{i})$ for any partition $C_{1},C_{2},\dots$
-	b.) $P\left( \bigcup_{i=1}^{\infty}A_{i}\leq \sum_{i=1}^{\infty}P(A_{i}) \right)$ for any set$A_{1},A_{2},\dots$
-		Boole's Inequality
+- a.) $P(A)=\sum_{i=1}^{\infty}P(A\cap C_{i})$ for any partition $C_{1},C_{2},\dots$
+- b.) $P\left( \bigcup_{i=1}^{\infty}A_{i}\leq \sum_{i=1}^{\infty}P(A_{i}) \right)$ for any set$A_{1},A_{2},\dots$
+	- Boole's Inequality
 
 ## Theorem 1.2.14
 If a job consists of $K$ separate tasks, the ith of which can be done in $n_{i}$ ways, $i=1,\dots ,k$, then the entire jobs can be done in $n_{1} \times n_{2} \times \dots \times n_{k}$ ways 
@@ -111,9 +111,9 @@ $$
 
 ## Definition 1.3.9
 If $A$ and $B$ are independent events, then the following pairs are also independent:
-	a.) $A$ and $B^c$
-	b.) $A^c$ and $B$
-	c.) $A^c$ and $B^c$
+- a.) $A$ and $B^c$
+- b.) $A^c$ and $B$
+- c.) $A^c$ and $B^c$
 
 
 ## Definition 1.3.12
