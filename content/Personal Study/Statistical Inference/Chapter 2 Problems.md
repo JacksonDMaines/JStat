@@ -6,7 +6,7 @@ Find PDF of Y?
 Let $y=x^3=g(x)$
 	 Then $g'(x)=3x^2 > 0$ $\forall x\in \mathbb{R}$ , thus monotone?
 
-We know that 
+We know that (from theorem link it later!!!!!)
 
 $$
 f_{Y}(y) = \begin{cases} f_{x}(g^{-1}(y))|\frac{d}{dy}g^{-1}(y)|& y \in Y \\
@@ -179,7 +179,39 @@ f_{Y}(y)=\begin{cases}
 0& other
 \end{cases}
 $$
-b.)  $Y=-\log(x)$ and $f_{X}(x)=\frac{(n+m+1)!}{n!m!}x^n(1-x)^m\space \space 0<x<1$
+b.)  $Y=-\log(x)$ and $f_{X}(x)=\frac{(n+m+1)!}{n!m!}x^n(1-x)^m\space \space 0<x<1$ and $m,n\in \mathbb{N}\cup {0}$
+Find pdf of Y
+Let
+	$y=-\log(x)=g(x)$ then,
+		$g'(x)=-\frac{1}{x}<0\space\forall x\in(0,1)\implies montone$
+	and
+		$g^{-1}(x)=-e^y$, so
+		$\frac{d}{dx}g^{-1}(x)=-e^y$
+	Thus
+$$
+f_{Y}(y)=\begin{cases}
+\frac{(n+m+1)!}{n!m!}(-e^y)^n(1+e^y)^m &0<y<\infty \\
+0 &other
+
+\end{cases}
+$$
+c.)$Y=e^X$ and $f_{X}(x)=\frac{1}{\sigma^2}xe^{\frac{-(x/\sigma)^2}{2}}$for $0<x<\infty$
+Find pdf of Y
+Let
+	$y=e^x=g(x)$ then,
+		$g'(x)=e^x\space\forall x\in(0,\infty)\implies monotone$
+therefore
+	$g^{-1}(y)=\ln(y)$
+		and
+		$\frac{d}{dy}g^{-1}(y)=\frac{1}{y}$
+thus
+$$
+f_{Y}(y)=\begin{cases}
+\frac{1}{\sigma^2}\ln(y)e^{-\frac{(\ln(y)/\sigma)^2}{2}}|\frac{1}{y}|&0<y<\infty \\
+0&other
+\end{cases}
+$$
+
 
 
 

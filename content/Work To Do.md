@@ -1,5 +1,5 @@
 - [ ] Fix home page for quartz
 - [ ] figure out how to do this with plugins
-- [ ] delete vercel or whatever its called
 - [ ] Find cute page emblem
 - [ ] write more notes
+	- [ ] also start writing theorems and stuff to link back in examples
