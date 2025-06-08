@@ -6,3 +6,11 @@ I think do work on weekends and type on weekdays?
 	- [ ] also start writing theorems and stuff to link back in examples
 
 
+
+Look uses for [these](https://help.obsidian.md/callouts)
+> [!tip] Woah
+> These could be useful for quiz question with answers in folded block
+
+>[!faq]-
+>hey does this open? omg it does
+
