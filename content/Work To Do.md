@@ -15,3 +15,11 @@ Look uses for [these](https://help.obsidian.md/callouts)
 >[!faq]- test
 >hey does this open? omg it does
 
+>[!tip]
+>$f(x)=x$
+
+ >[!question]-
+ >what
+ >hwo waht 
+ >when wehre why
+ >

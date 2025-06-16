@@ -11,6 +11,7 @@ $$
 	\frac{d}{dx}f(x) = f'(x) = ax^{a-1}
 	$$
 # Basic Rules
+Basic Derivate Rules
 
 ## Product Rule
 Let $f(x)$ and $g(x)$ functions exists then
@@ -37,7 +38,10 @@ $$
 
 # Trig Rules
 
+Derivate Trig Rules
+
 ## Easy Trick
+
 $$
 \text{Go down for derivative, once at bottom go back to top}
 $$
