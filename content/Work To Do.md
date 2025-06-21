@@ -1,26 +1,13 @@
+
 I think do work on weekends and type on weekdays?
-- [ ] Fix home page for quartz
-- [ ] figure out how to do this with plugins
-- [ ] Find cute page emblem
+- [x] Fix home page for quartz
+	- Note: You need to use Properties just type "---" at beginning of note
+- [x] figure out how to do this with plugins
+- [x] Get Page to use cute favicon?
+	- Note: The browser is just saving the old favicon, you can check with private browser
+	- [x] find cute icon
 - [ ] write more notes
 	- [ ] also start writing theorems and stuff to link back in examples
-- [ ] look into manim
-
-
+- [x] look into manim
 
 Look uses for [these](https://help.obsidian.md/callouts)
-> [!tip] Woah
-> These could be useful for quiz question with answers in folded block
-
->[!faq]- test
->hey does this open? omg it does $f(x = x^{x^2})$
-
-
->[!tip]
->$f(x)=x$
-
- >[!question]-
- >what
- >hwo waht 
- >when wehre why
- >
