@@ -13,7 +13,8 @@ Look uses for [these](https://help.obsidian.md/callouts)
 > These could be useful for quiz question with answers in folded block
 
 >[!faq]- test
->hey does this open? omg it does
+>hey does this open? omg it does $f(x = x^{x^2})$
+
 
 >[!tip]
 >$f(x)=x$
