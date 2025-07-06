@@ -160,4 +160,63 @@ $$
 $$
 
 ## Radius of Convergence
-$\exists }$
+$\exists R$ s.t. the series converges for $|x-a|<R$ and diverges of $|x-a|>R$, so
+
+	$a-R<x<a+R$ Converges
+
+	$x<a-R\text{ and }x>a+R$ Diverges
+
+
+## Taylor Series
+$$
+
+f(x) = \sum _{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n
+$$
+Note: Maclaurin series is when $a=0$ 
+
+nth degree taylor polynomial
+$$
+T_{n}(x)=\sum_{i=0}^{\infty} \frac{f^{(i)}(a)}{i!}(x-a)^i
+$$
+
+### Theorem:
+Suppose $f(x)=T_{n}(x)+R_{n}(x)$, then 
+	if $\lim_{ n \to \infty }R_{n}(x) = 0$ for $|x-a|<R$ then, 
+$$
+f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x)}{n!}(x-a)^n
+$$
+	on $|x-a|<R$
+
+
+## Some Useful Formulas
+$$
+e^x=\sum_{n=0}^{\infty} \frac{x^n}{n!}
+$$
+$$
+\cos(x) = \sum_{n=0}^{\infty} (-1)^n\cdot \frac{x^{2n}}{(2n)!}
+$$
+
+$$
+\sin(x) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}
+$$
+
+## Binomial
+### Theorem
+if $n \in \mathbb{Z}^{+}$ then, 
+	$(a+b)^n= \sum_{i=0}^{n} {n\choose i}a^{n-i}b^{i}$
+
+where
+	${n\choose i} =\frac{n!}{i!(n-i)!}$ 
+
+Note: ${n \choose_{0}} = 1$
+
+
+
+### Series
+if K is any number and $|x|<1$ then, 
+$$
+(1+x)^k=\sum_{n=0}^{\infty} {k\choose n}{x^n}
+$$
+	what a horrible variable choice? why????
+
+
