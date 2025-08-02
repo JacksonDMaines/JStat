@@ -22,3 +22,10 @@ Set-ExecutionPolicy RemoteSigned –Scope Process
 	
 npx quartz sync
 ```
+
+
+
+# Quote
+```
+There is no shortcut to learning, unfortunately.
+```
