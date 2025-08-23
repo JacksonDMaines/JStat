@@ -1,0 +1,3 @@
+- Course: PHM 1690L
+- Time: Tuesday/Thursday, 10am-11:50pm
+- Professor: Yongsu Lee
