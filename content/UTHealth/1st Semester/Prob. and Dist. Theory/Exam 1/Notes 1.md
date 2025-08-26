@@ -79,8 +79,8 @@ Example 4:
 
 Countably infinite:
 
-If a sample spaceSis either finite or countable infinite, then it is called adiscrete sample  
-space(or said to becountable).
+If a sample space $S$ is either finite or countable infinite, then it is called a discrete sample  
+space(or said to be countable).
 
 Uncountable:
 
@@ -90,29 +90,28 @@ Example:
 
 ### 2.3 Event
 
-Aneventis any collection of possible outcomes of an experiment, that is, any subset of the  
-sample spaceS(includingSitself).
-
+An event is any collection of possible outcomes of an experiment, that is, any subset of the  
+sample space $S$ (including $S$ itself).
+ 
 Consider the example of tossing two coins: The subset:
 
-contains the outcomes that correspond to theeventof obtaining “at least one head.” If any  
-one of the outcomes inAoccurs, theneventAoccurred. Similarly, if one of the outcomes  
+contains the outcomes that correspond to the event of obtaining “at least one head.” If any  
+one of the outcomes in $A$ occurs, then event $A$ occurred. Similarly, if one of the outcomes  
 in
 
-occurs, then theevent“at least one tail” has occurred.
+occurs, then the event “at least one tail” has occurred.
 
 Consider the experiment of selecting a card at random from a standard deck and noting its  
-suit:clubs (C),diamonds (D),hearts (H), orspades (S).
+suit: clubs (C), diamonds (D), hearts (H), or spades (S).
 
 The sample space is
 
 and some possible events are
 
 ### 2.4 Set operations
+$A\subset B$ (Containment):
 
-A⊂B(containment):
-
-A=B(equality):
+$A=B$ (Equality):
 
 - Union:
 - Intersection:
@@ -127,58 +126,58 @@ Example:
 2.4.3 Distributive Laws:
 
 Proof of distributive law:  
-To prove: For any setsA,B, andC,
-
-```
-A∩(B∪C) = (A∩B)∪(A∩C)
-```
+To prove: For any sets $A$, $B$, and $C$,
+$$A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$$
 
 Goal: Prove set equality by showing mutual containment:
 
-```
-A∩(B∪C)⊂(A∩B)∪(A∩C) and (A∩B)∪(A∩C)⊂A∩(B∪C)
-```
+$$
+\begin{gather}
+A\cap(B\cup C)\subset(A\cap B)\cup(A\cap C) \\
+\text{and} \\
+(A\cap B)\cup(A\cap C)\subset A\cap(B\cup C)
+\end{gather}
+$$
 
 Proof: first direction  
-To show:A∩(B∪C)⊂(A∩B)∪(A∩C)
+To show: $A\cap(B\cup C)\subset(A\cap B)\cup(A\cap C)$
 
 Proof: second direction  
-To show:(A∩B)∪(A∩C)⊂A∩(B∪C)
+To show: $(A\cap B)\cup(A\cap C)\subset A\cap(B\cup C)$
 
-2.4.4 De Morgan’s Laws
-
-Visual:
+#### 2.4.4 De Morgan’s Laws
 
 Visual:
 
-2.4.5 Infinite collections of sets
+Visual:
 
-LetA 1 , A 2 , A 3 ,.. .be a collection of sets, all defined on a sample spaceS. Then:
+#### 2.4.5 Infinite collections of sets
+
+Let $A_{1},A_{2},\dots$ be a collection of sets, all defined on a sample space $S$. Then:
 
 Example: infinite collections of sets  
-LetS= (0,1] and defineAi= [(1/i),1]. Then:  
-⋃∞  
-i=1Ai=
+Let $S= (0,1]$ and define $A_{i}= [(1/i),1]$. Then:  
+$$
+\bigcup_{i=1}^{\infty} A_{i} =
+$$
 
-#### ⋂∞
+$$
+\bigcap_{i=1}^{\infty} A_{i} =
+$$
 
-```
-i=1Ai=
-```
+#### 2.4.6 Disjoint sets
 
-2.4.6 Disjoint sets
+**Definition** Two events $A$ and $B$ are mutually exclusive(or disjoint) if:
 
-DefinitionTwo eventsAandBaremutually exclusive(ordisjoint) if:
-
-The eventsA 1 , A 2 ,.. .arepairwise disjointif:
+The events $A_{1},A_{2},\dots$ are pairwise disjoint if:
 
 Example:
 
-2.4.7 Partition of a set
+#### 2.4.7 Partition of a set
 
-DefinitionIfA 1 , A 2 ,.. .are pairwise disjoint and:
+**Definition** If $A_{1},A_{2},\dots$ are pairwise disjoint and:
 
-then the collection{A 1 , A 2 ,.. .}is called apartitionofS.
+then the collection{$A_{1},A_{2},\dots$}is called a partition of $S$.
 
 Example:
 
