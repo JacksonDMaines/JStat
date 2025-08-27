@@ -93,15 +93,19 @@ For indefinite integrals it works like this.
 $$
 \int_{a}^{b}udv = (u\cdot v)\Big|_{a}^{b}-\int_{a}^{b}vdu
 $$
+
 >[!tip]
 >Its best to choose something that has a terminating derivative for u (Ex: x^2)
 > and something that has a looping derivative for dv (Ex: sinx)
+
 
 
 Lets do an example:
 $$
 \text{Solve the following:} \int xe^{6x}dx
 $$
+
+
 >[!faq]- Answer
 >$$
 \begin{align}

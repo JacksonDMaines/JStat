@@ -54,3 +54,9 @@ $$
 & -Cos
 \end{aligned}
 $$
+# Random Tricks
+
+$$
+\frac{d}{dx}a^x = (\ln(a))a^x
+$$
+

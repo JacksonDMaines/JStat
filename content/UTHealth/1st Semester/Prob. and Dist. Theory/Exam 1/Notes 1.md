@@ -31,17 +31,26 @@ Stochastic (Probabilistic) Model: Outcomes vary even under identical conditions 
 	$\implies$ need probabilistic model to deal with uncertainty
 ### 1.2 Role of probability in connecting population and sample
 
-- Population: a group of people or object we are interested in studying (interchangeable with model)
-- Sample: a subset of the populations (interchangeable with data)
+- **Population**: a group of people or object we are interested in studying (interchangeable with model)
+- **Sample**: a subset of the populations (interchangeable with data)
 
-Example 1: Population→Sample
+**Example 1:** Population→Sample
+40% have particular biomarker.
+	Question: A random sample of 10 subjects was chosen. What number of them have the biomarker?
 
-Example 2: Sample→Population
+Model to Data
 
+**Example 2**: Sample→Population
+Observe among 10 randomly selected subjects 4 have a biomarker. 
+	Question 1: What is the estimated proportion in population with the biomarker. 
+	Question 2: If Someone claims that 30% have the biomarker, can we accept or reject that claim?
+
+Data to Model
 ### 1.3 Two Perspectives
 
-- Model→Data:
-- Data→Model:
+- **Model→Data**: Known model (population) allows us to calculate the probability of observed data (sample)
+
+- **Data→Model**: Known data (sample) allows us to estimate the parameters of model (population)
 
 ### 1.4 Goal of a Biostatistician
 
@@ -55,15 +64,15 @@ Example 2: Sample→Population
 
 ### 2.1 Basic terminology
 
-Experiment:
+**Experiment**: A process that can generate observable outcomes
 
-Trial:
+**Trial**: Single execution of single experiment
 
-Outcome:
+**Outcome**: a possible result of trial
 
-Sample space:
+**Sample** **space**:
 
-Sample space examples:
+**Sample space examples**:
 
 Example 1:
 
@@ -75,14 +84,14 @@ Example 4:
 
 ### 2.2 Sample spaces types
 
-(countably) Finite:
+**(countably) Finite:**
 
-Countably infinite:
+**Countably infinite**:
 
 If a sample space $S$ is either finite or countable infinite, then it is called a discrete sample  
 space(or said to be countable).
 
-Uncountable:
+**Uncountable**:
 
 Example:
 
@@ -113,17 +122,17 @@ $A\subset B$ (Containment):
 
 $A=B$ (Equality):
 
-- Union:
-- Intersection:
-- Complement:
+- **Union:**
+- **Intersection:**
+- **Complement:**
 
 Example:
 
-2.4.1 Commutative Laws:
+**2.4.1 Commutative Laws:**
 
-2.4.2 Associative Laws:
+**2.4.2 Associative Laws:**
 
-2.4.3 Distributive Laws:
+**2.4.3 Distributive Laws:**
 
 Proof of distributive law:  
 To prove: For any sets $A$, $B$, and $C$,
