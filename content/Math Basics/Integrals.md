@@ -55,7 +55,7 @@ $$
 $$
 
 
-
+$$
 
 ## Integration by Parts
 Integration by parts utilizes a u-sub like idea, but instead of just choosing a u you also choose a dv. Its most useful for integrals that contain a function that has a looping derivative (think $e^x$ or $sin(x)$)
@@ -118,7 +118,7 @@ $$
 & = \frac{x}{6}e^{6x}-\frac{1}{36}e^{6x}+C
 \end{align}
 $$
-
+$$
 
 # Higher Order Integrals
 $$

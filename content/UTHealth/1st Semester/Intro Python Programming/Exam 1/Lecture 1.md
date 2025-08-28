@@ -1,7 +1,14 @@
+# Assignments, Variables, Inputs and Outputs
 
-# Variables, Assignments, Inputs and Outputs
+## Assignments
+If you ever want to save a value to memory, you can assign it to a variable. This can be done using an '='. 
 
-# Variables
+The variable must be on the left hand side of the **=** and the value you want to assign must be on the right hand side. 
+$$
+\text{Variable = Value}
+$$
+
+## Variables
 Save value to a variable. The variable is the "set to" value after the equals sign in the code.
 ```python
 # Number variable
@@ -32,8 +39,8 @@ Some tricks.
 	- The common notation to replace a space is an underscore _
 
 
-## Variable Types
-The variables above are not comparable. Var is a number and text is... well text. These have fancy names in coding languages. For now, we will talk about these. 
+### Variable Types
+The variables above are not comparable. Var is a number and text is... well text. Numbers and text have fancy names in coding languages. For now, we will talk about these. 
 
 - Text type: **str**
 - Numeric Types: **int**, **float**
@@ -58,4 +65,22 @@ type(var)
 > <class, 'float'>
 ```
 
+## Input and Output
+You can prompt the user for an input using the **input** function. For example:
+```python
+input("Please enter your name: ")
+> Please Enter your name: Jackson
+> 'Jackson'
+```
 
+If you assign a input function to a variable you will see that the function will still run (other functions might not do this). When you then call that variable that output will be your input. For example: 
+```python
+var = input("Please enter your name: ")
+> Please enter your name: Jackson
+
+var
+> 'Jackson'
+```
+
+
+# Extra Notes
