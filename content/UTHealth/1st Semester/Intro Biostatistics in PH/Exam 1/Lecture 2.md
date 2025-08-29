@@ -1,3 +1,4 @@
+Depending of the [[Lecture 0, 1#Types of Variables|type of data]] we use different summary techniques. 
 # Categorical Data
 Names for different groups, levels, or categories
 

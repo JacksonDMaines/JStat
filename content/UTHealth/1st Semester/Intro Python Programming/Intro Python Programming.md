@@ -5,7 +5,8 @@
 
 
 # Exam 1 
-[[Lecture 1|Lecture Notes]]
+[[Lecture 1|Lecture Notes 1]]
+
 
 
 
