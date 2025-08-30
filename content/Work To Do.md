@@ -9,7 +9,7 @@ I think do work on weekends and type on weekdays?
 - [ ] Fix Bad Syntax
 	Errors in Compilation 
 	- [ ] [[Derivatives]]
-	- [ ] [[Integrals]]
+	- [x] [[Integrals]]
 	- [ ] [[Linear Algebra]]
 - [ ] Get Picture for [[Linear Algebra#$ cdot$ by Matrix|Multipy by Matrix]]
 	- [ ] Get Picture for [[Linear Algebra#Projection|Projections]]

@@ -65,6 +65,7 @@ $$
 \end{array}\right] \\ 
 \end{gather}
 $$
+
 this is a $\text{n x m}$ matrix
 
 
@@ -97,6 +98,7 @@ c & d
 E\cdot c & E\cdot d
 \end{array}\right]
 $$
+
 or any $\text{n x m}$ matrix
 
 #### $\cdot$ by Matrix
@@ -132,10 +134,11 @@ $$
 \end{array}\right]
 $$
 Note: we can tell the $1st$ matrix is $3 \times2$ and the $2nd$ matrix is $2 \times 3$ therefore
-$$
-\underbracket{3\,\times \overbracket{2 \space \cdot \space 2}^{\text{matching}} \times\, 3}_{\text{answer}} = 3 \times 3
 
 $$
+\underbracket{3\,\times \overbracket{2 \space \cdot \space 2}^{\text{matching}} \times\, 3}_{\text{answer}} = 3 \times 3
+$$
+
 we know our final matrix will be size $3 \times 3$. If we follow our matrix multiplication mantra "row times column"
 
 $$
@@ -152,7 +155,9 @@ $$
 5(1) + 6(2) & 5(2) + 6(1) & 5(1) + 6(1)
 \end{array}\right]
 $$
+
 simplify
+
 $$
 = \left[\begin{array}{cc}
 1 + 4 & 2 +2 &  1+2 \\
@@ -282,20 +287,25 @@ Look in Numerical Notes
 
 ### Determinates
 $A$ is a $n \times n$ then the determinate of $A$ is denoted:
+
 $$
 \det(a) = |A| = \left[\begin{array}
 {aaa}a_{11} & a_{12} & \dots \\
 \vdots & \ddots
 \end{array}\right]
 $$
+
 #### $2 \times 2$ Matrix
+
 $$
 \det(A) = \left|\begin{array}
 {aa}a & b \\
 c & d
 \end{array}\right| = ad-bc
 $$
+
 #### $3 \times 3$ Matrix
+
 $$
 \det(A) = \left|\begin{array}
 {aaa}a & b  & c \\
@@ -303,7 +313,9 @@ d & e & f \\
 g & h & i
 \end{array}\right| = aei+bfg + cdh - (ceg + afh + bdi)
 $$
+
 this comes from the product of the diagonals of this matrix
+
 $$
 \left|\begin{array}
 {aaa}a & b  & c \\
@@ -315,7 +327,9 @@ d & e \\
 g & h
 \end{array}
 $$
+
 for example.
+
 $$
 \left|\begin{array}
 {aaa}\colorbox{yellow}{a} & \colorbox{green}{b}  & \colorbox{pink}{c} \\
@@ -327,11 +341,15 @@ g & h & \colorbox{yellow}{i}
 \colorbox{green}{g} & \colorbox{pink}{h}
 \end{array}
 $$
+
 get the first half of the equation. 
+
 $$
 \colorbox{yellow}{aei} + \colorbox{green}{bfg} + \colorbox{pink}{cdh}
 $$
+
 then the second half the equation comes from the opposite angle diagonals. 
+
 $$
 \left|\begin{array}
 {aaa}a & b  & \colorbox{orange}{c} \\
@@ -343,14 +361,19 @@ d & \colorbox{orange}{e} & \colorbox{lightblue}{f} \\
 g & h
 \end{array}
 $$
+
 getting you: 
+
 $$
 \colorbox{orange}{ceg} + \colorbox{lightblue}{afh} + \colorbox{red}{bdi}
 $$
+
 that comes together to give you the equation for a determinate of a $3 \times 3$ matrix
+
 $$
  \det(a) = \colorbox{yellow}{aei} + \colorbox{green}{bfg} + \colorbox{pink}{cdh} - (\colorbox{orange}{ceg} + \colorbox{lightblue}{afh} + \colorbox{red}{bdi})
 $$
+
 
 #### Properties
 Let $A$ be $n \times n$ and $c\in\mathbb{R}$
@@ -432,6 +455,7 @@ $$
 u \times v = (u_{2}v_{3}- u_{3}v_{2}, u_{3}v_{1}- u_{1}v_{3}, u_{2}v_{2}-u_{2}v_{1})
 $$
 this is a vector I think? so maybe I should be using <>? 
+
 $$
 u \times v = \left(\left|\begin{array}
 {aa} u_{2} & u_{3} \\
@@ -444,6 +468,7 @@ v_{1} & v_{3}
 v_{1} & v_{v}
 \end{array}\right|\right)
 $$
+
 $$
 u \times v = \left| \begin{array}
 {aaa} i & j & k \\
@@ -451,6 +476,7 @@ u_{1} & u_{2} & u_{3} \\
 v_{1} & v_{2} & v_{3}
 \end{array}\right|
 $$
+
 	Note: you also need to solve for i,j,k here after getting the determinate
 
 $$
