@@ -35,7 +35,8 @@ Let \space f(x)=2xe^{x^2} \space solve \space \int f(x)dx = \int 2xe^{x^2}dx
 $$
 >[!faq]- Answer
 
-$$\begin{align}
+$$
+\begin{align}
 &Let \space u=x^2, \text{we now need to find the derivative of u called du} \\ \\
 & du = \frac{d}{dx}x^2=2xdx \\ \\ \\
 & \text{Now we have: }  \\
@@ -52,7 +53,7 @@ $$\begin{align}
 &=e^{x^2} + C \\ \\ \\
 &\text{This is a simple U-Sub example.} \\
 & \text{But U-Sub can be very useful tool for integrals that are not immediately obvious.}
-\end{align} 
+\end{align}
 $$
 
 
@@ -108,7 +109,9 @@ $$
 
 >[!faq]- Answer
 
-$$\begin{align}
+
+$$
+\begin{align}
 &\int xe^{6x}dx \\
 &\text{Let }u=x \text{ and }dv=e^{6x}dx \\ 
 & \text{then }du=1dx \text{ and }v =\int e^{6x}dx=\frac{1}{6}e^{6x} \\ \\ \\
