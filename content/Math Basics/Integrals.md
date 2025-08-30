@@ -34,7 +34,7 @@ $$
 Let \space f(x)=2xe^{x^2} \space solve \space \int f(x)dx = \int 2xe^{x^2}dx
 $$
 >[!faq]- Answer
->$$ \begin{align}
+>$$ $$\begin{align}
 &Let \space u=x^2, \text{we now need to find the derivative of u called du} \\ \\
 & du = \frac{d}{dx}x^2=2xdx \\ \\ \\
 & \text{Now we have: }  \\
@@ -52,7 +52,7 @@ $$
 &\text{This is a simple U-Sub example.} \\
 & \text{But U-Sub can be very useful tool for integrals that are not immediately obvious.}
 \end{align} 
-$$
+$$ $$
 
 
 $$
@@ -96,7 +96,7 @@ $$
 
 >[!tip]
 >Its best to choose something that has a terminating derivative for u (Ex: x^2)
-> and something that has a looping derivative for dv (Ex: sinx)
+> and something that has a looping derivative for dv (Ex: sinx) Also choose u with L.I.A.T.E (**L**ogs, **I**nverse, **A**lgebraic, **T**rig, **E**xponential)
 
 
 
@@ -108,7 +108,7 @@ $$
 
 >[!faq]- Answer
 >$$
-\begin{align}
+$$\begin{align}
 &\int xe^{6x}dx \\
 &\text{Let }u=x \text{ and }dv=e^{6x}dx \\ 
 & \text{then }du=1dx \text{ and }v =\int e^{6x}dx=\frac{1}{6}e^{6x} \\ \\ \\
@@ -116,7 +116,7 @@ $$
 &=x\left( \frac{1}{6}e^{6x} \right) - \frac{1}{6}\int e^{6x}dx \\
 &=x\left( \frac{1}{6}e^{6x} \right) - \frac{1}{6}\left( \frac{1}{6}e^{6x} + C \right) \\
 & = \frac{x}{6}e^{6x}-\frac{1}{36}e^{6x}+C
-\end{align}
+\end{align} $$
 $$
 $$
 
