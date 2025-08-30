@@ -9,7 +9,7 @@ Let $f(x)=x^a$ where $a\in\mathbb{z}/{\{0\}}$
 then
 $$
 	\frac{d}{dx}f(x) = f'(x) = ax^{a-1}
-	$$
+$$
 # Basic Rules
 Basic Derivate Rules
 
