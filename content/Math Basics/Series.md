@@ -200,6 +200,14 @@ $$
 \sin(x) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}
 $$
 
+$$
+\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n
+$$
+$$
+\ln(1+x)=\sum_{n=0}^{\infty}(-1)^n\frac{x^n}{n}
+$$
+
+
 ## Binomial
 ### Theorem
 if $n \in \mathbb{Z}^{+}$ then, 
