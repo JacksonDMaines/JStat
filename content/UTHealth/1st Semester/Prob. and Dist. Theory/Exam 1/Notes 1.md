@@ -70,32 +70,40 @@ Data to Model
 
 **Outcome**: a possible result of trial
 
-**Sample** **space**:
+**Sample** **space**: set of all possible outcomes of an experiment, 
+- Denoted: $S$
 
 **Sample space examples**:
 
-Example 1:
+Example 1: Toss 2 Coins
+- $S =\{HH, HT, TH, TT\}$
 
-Example 2:
+Example 2: Toss coin twice, observe # of heads
+- $S=\{0,1,2\}$
 
-Example 3:
+Example 3: Toss coin, until heads occurs, we observe # of tosses.
+- $S=\{1,2,3,\dots\}$
 
-Example 4:
+Example 4: A lightbulb in service, time of operation until it dies
+ - $S=\{0\leq t\leq \infty\}$
 
 ### 2.2 Sample spaces types
 
-**(countably) Finite:**
-
-**Countably infinite**:
+**(countably) Finite:** $S=\{e_{1}, e_{2}, \dots, e_{N}\}$ 
+- Example 1 and 2
+**Countably infinite**: $S=\{e_{1}, e_{2}, \dots\}$
+- Example 3
 
 If a sample space $S$ is either finite or countable infinite, then it is called a discrete sample  
 space(or said to be countable).
 
-**Uncountable**:
+**Uncountable**: It does NOT have 1-to-1 map to Natural numbers. 
+- There is no way to enumerate all elements of $S$
 
-Example:
+Example: Set of Real #'s in interval $[0,1]$ 
 
-Example:
+Example: The exact life time of light bulbs
+ - $S=\{t\in\mathbb{R}|t\geq0\}$
 
 ### 2.3 Event
 
@@ -103,36 +111,49 @@ An event is any collection of possible outcomes of an experiment, that is, any s
 sample space $S$ (including $S$ itself).
  
 Consider the example of tossing two coins: The subset:
-
+$$
+A = \{HH, HT, TH\}
+$$
 contains the outcomes that correspond to the event of obtaining “at least one head.” If any  
 one of the outcomes in $A$ occurs, then event $A$ occurred. Similarly, if one of the outcomes  
 in
-
+$$
+B=\{TT, HT, TH\}
+$$
 occurs, then the event “at least one tail” has occurred.
 
 Consider the experiment of selecting a card at random from a standard deck and noting its  
 suit: clubs (C), diamonds (D), hearts (H), or spades (S).
 
 The sample space is
-
+$$
+S=\{C,D,H,S\}
+$$
 and some possible events are
+$$
+A = \{C, D\}
+$$
+$$
+B = \{D, H, S\}
+$$
 
 ### 2.4 Set operations
-$A\subset B$ (Containment):
+$A\subset B$ (Containment): $x\in A \implies x\in B$
 
-$A=B$ (Equality):
+$A=B$ (Equality): $A\subset B$ and $B \subset A$
 
-- **Union:**
-- **Intersection:**
-- **Complement:**
+- **Union:** $A\cup B=\{x: x\in A \text{ or }x\in B\}$
+- **Intersection:** $A\cap B=\{x: x\in A \text{ and }x\in B\}$
+- **Complement:** $A^c=\{x: \not\in A\}$ 
+	- $A/B = \{x: x\in A \text{ and }x\not\in B\}$
 
-Example:
 
-**2.4.1 Commutative Laws:**
+**2.4.1 Commutative Laws:** $A\cup B = B\cup A$ and $A\cap B = B\cap A$
 
-**2.4.2 Associative Laws:**
+**2.4.2 Associative Laws:** $A\cup(B\cup C) = (A\cup B)\cup C$ and $A\cap(B\cap C)=(A\cap B)\cap C$
 
-**2.4.3 Distributive Laws:**
+**2.4.3 Distributive Laws:** $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$ and $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$
+
 
 Proof of distributive law:  
 To prove: For any sets $A$, $B$, and $C$,
@@ -156,39 +177,46 @@ To show: $(A\cap B)\cup(A\cap C)\subset A\cap(B\cup C)$
 
 #### 2.4.4 De Morgan’s Laws
 
-Visual:
-
-Visual:
+$$
+(A\cup B)^c = A^c\cap B^c
+$$
+$$
+(A\cap B)^c = A^c\cup B^c
+$$
 
 #### 2.4.5 Infinite collections of sets
 
 Let $A_{1},A_{2},\dots$ be a collection of sets, all defined on a sample space $S$. Then:
-
-Example: infinite collections of sets  
-Let $S= (0,1]$ and define $A_{i}= [(1/i),1]$. Then:  
 $$
-\bigcup_{i=1}^{\infty} A_{i} =
+\bigcup_{i=1}^{\infty} A_{i} = \{x\in S|x \in A_{i} \text{ for some i}\}
 $$
 
 $$
-\bigcap_{i=1}^{\infty} A_{i} =
+\bigcap_{i=1}^{\infty} A_{i} = \{x \in S|x \in A_{i} \text{ for all i}\}
 $$
+
+
 
 #### 2.4.6 Disjoint sets
 
 **Definition** Two events $A$ and $B$ are mutually exclusive(or disjoint) if:
-
+$$
+A\cap B = \emptyset 
+$$
 The events $A_{1},A_{2},\dots$ are pairwise disjoint if:
+$$
+A_{i}\cap A_{j} = \emptyset \space \forall_{i \not=j}
+$$
 
-Example:
 
 #### 2.4.7 Partition of a set
 
 **Definition** If $A_{1},A_{2},\dots$ are pairwise disjoint and:
+$$
+\bigcup_{i=1}^{\infty}A_{i}=S
+$$
 
 then the collection{$A_{1},A_{2},\dots$}is called a partition of $S$.
-
-Example:
 
 Partitions are useful in probability theory, allowing us to divide the sample space into small,  
 nonoverlapping pieces.
