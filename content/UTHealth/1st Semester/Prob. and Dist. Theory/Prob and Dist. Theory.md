@@ -6,6 +6,7 @@
 
 
 # Exam 1
-[[Notes 1|Lecture Notes 1]]
+- [[Notes 1|Lecture Notes 1]]
+- [[Notes 2|Lecture Notes 2]]
 
 
