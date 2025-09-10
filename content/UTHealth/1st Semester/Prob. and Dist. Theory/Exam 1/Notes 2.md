@@ -44,6 +44,7 @@ Let $S=(-\infty, \infty)$ then $\mathcal{B}$ is chosen to contain all sets of th
 - $(a,b]$
 - $[a,b)$
 - $(a,b)$
+
 $\forall a,b\in \mathbb{R}$
 
 Note: By properties of $\mathcal{B}$ contains all sets that can be formed by taking union/intersections of the sets
@@ -74,14 +75,15 @@ Comments on the Axioms
 - "Fair" equally likely for heads or tails
 
 $S=\{H,T\}$ 
+
 $\sigma$-algebra = $\big\{\{\emptyset\}, \{H\}, \{T\}, \{HT\}\big\}$
 
-"fair" $\implies$ $P(\{H\})=P(\{T\})$ 1. 
+"fair" $\implies$ $P(\{H\})=P(\{T\}) ①$  
 	by properties 2.) and 3.)
 
-$P(\{H\}\cup\{T\})=P(\{H\})+ P(\{T\})=1$ 2. 
+$P(\{H\}\cup\{T\})=P(\{H\})+ P(\{T\})=1 ②$
 
-1.+2. $\implies$ $P(\{H\})=P(\{T\})=\frac{1}{2}$ 
+$①+② \implies P(\{H\})=P(\{T\})=\frac{1}{2}$ 
 
 
 ## 3 Simple sample space
