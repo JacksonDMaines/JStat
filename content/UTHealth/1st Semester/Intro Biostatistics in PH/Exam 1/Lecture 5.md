@@ -16,25 +16,30 @@ Imagine this example:
 - **$T^-$:** Test negative
 
 ### Sensitivity(TPR):
-Probability of a positive test when person has disease, $P(T^+|D^+)$
+- $P(T^+|D^+)$
+Probability of a positive test when person has disease
 
 ### Positive Prediction Value(PPV):
-Probability of having the disease given they have a positive test, $P(D^+|T^+)$ 
+- $P(D^+|T^+)$
+Probability of having the disease given they have a positive test 
 
 ### Specificity(TNR):
-Probability of a negative test when person has no disease, $P(T^-|D^-)$
+- $P(T^-|D^-)$
+Probability of a negative test when person has no disease
 
 ### Negative Prediction Value(NPV):
-Probability of not having the disease given they have a negative test, $P(D^-|T^-)$
+- $P(D^-|T^-)$
+Probability of not having the disease given they have a negative test
 
 ### False Negative Rate(FNR):
-$P(T^-|D^+)$
+- $P(T^-|D^+)$
 
 ### False Positive Rate(FPR):
-$P(T^+|D^-)$
+- $P(T^+|D^-)$
 
 ### Prevalence 
-$P(D^+)$, probability of disease in the population. 
+- $P(D^+)$ 
+Probability of disease in the population. 
 
 
 |       | $D^+$                                          | $D^-$                                           |                                  |
