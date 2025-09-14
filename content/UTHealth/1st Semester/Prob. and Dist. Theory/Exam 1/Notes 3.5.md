@@ -12,6 +12,11 @@ $$
 \frac{n!}{k_{1}!k_{2}!\dots k_{m}!}
 $$ this is super helpful, its an alternative to Multiplication Rule
 
+
+### Theorem 1.2.14
+If a jobs consists of k separate tasks, the $ith$ of which can be done is $n_i$ ways, $i=1,\dots,k$, then the entire job can be done in $n_{1}\times n_{2} \times\dots \times n_{k}$ ways. 
+
+
 # Typical Idea
 1. Define $A$
 2. Find total number of combinations
@@ -23,4 +28,5 @@ $$
 **Note:** If you cant find all combinations easily, try manually finding all of them. This could be really hard in some cases, but a lot faster in other cases. 
 
 
-**Important:** I need to figure out an easy way to understand how to calculate outcomes in group? Like the [[Notes 3|full house question]]. Cause sometimes its hard to know what values I need to multiply. 
+**Question:** I need to figure out an easy way to understand how to calculate outcomes in group? Like the [[Notes 3|full house question]]. Cause sometimes its hard to know what values I need to multiply. 
+- **Answer:** Because of [[Notes 3.5#Theorem 1.2.14|Theorem 1.2.14]]
