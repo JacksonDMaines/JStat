@@ -194,9 +194,13 @@ Useful when:
 - Helps break complex events into manageable parts
 
 ## 4 Bayes’ Theorem:
-
+$$
+P(B_{j}|A)=\frac{P(B_{j})\cdot P(A|B_{j})}{\sum_{i=1}^{n}P(B_{i})P(A|B_{i})}=\frac{P(B_{j})\cdot P(A|B_{j})}{P(A)}=\frac{P(A\cap B_{j})}{P(A)}
+$$
 An simplified version:
-
+$$
+P(B|A)=\frac{P(B)\cdot P(A|B)}{P(A)}
+$$
 ### —
 
 **Example (Two Boxes with Colored Balls):**  
@@ -210,9 +214,18 @@ From box $A$, the probability of drawing a red ball is 0.7. From box $B$, the
 
 probability of drawing a red ball is 0.2. You draw one ball and it is red. What is  
 the probability that the red ball was from box $A$?  
+
 Solution: First compute the marginal probability of red via total probability:
 
+- "Given a red ball, whats the prob. its from box $A$?" or $P(A|red)$
+$$
+P(red) = P(red \cap A)+P(red \cap B)=P(red|A)P(A)+P(red|B)P(B)=(.7)(.4)+(.2)(.6)=.7
+$$
+
 Apply Bayes’ Theorem:
+$$
+P(A|red)= \frac{P(red|A)\cdot P(A)}{P(red)}=\frac{(.7)(.4)}{.4}=.7
+$$
 
 **Example:** A disease affects 1 in 1,000 people. The diagnostic test is 99% sensitive  
 (true positive rate) and 95% specific (true negative rate). A person takes the test  
@@ -225,13 +238,18 @@ We want to find: $P(Disease |Positive \space Test)$
 - $T$: Test result is positive
 
 Given:
+- $P(D)=\frac{1}{1000}=.001$
+- $P(D^c)=.999$
+- $P(T|D)=.99$
+- $P(T|D^c)=1-P(T^c|D^c)=1-.95=.05$
 
-```
-P(D) = P(Dc) =
-P(T |D) = P(T |Dc) =
-```
 
 Applying Bayes’ Theorem,
+
+$$
+P(D|T)=\frac{P(D)\cdot P(T|D)}{P(D)\cdot P(T|D)+P(D^c)P(T|D^c)}=\frac{(.001)(.99)}{(.001)(.99)+(.999)(.05)}\approx .0194 
+$$
+
 
 Key Takeaways:
 
@@ -242,9 +260,13 @@ Key Takeaways:
 ## 5 Independence
 
 **Definition:** Two events $A$ and $B$ are statistically independent if:
-
+$$
+P(A\cap B)=P(A)P(B)
+$$
 **Interpretation:** The occurrence of one does not affect the other.
-
+$$
+P(A|B)=P(A)
+$$
 **Examples:**
 
 - Tossing a coin twice: the outcome of one toss doesn’t affect the other.
@@ -254,10 +276,15 @@ Key Takeaways:
 **Example:** Three radar sets operating independently are set to detect any aircraft  
 flying through a certain area. Each set has a probability of 0.02 of failing to detect  
 a plane in its area.
+- $P(\text{An airplane undetected})=.02 \cdot.02\cdot.02=.02^3$
+- $P(\text{An airplane detected by all 3})=.98 \cdot.98\cdot.98=.98^3$
 
 Multiple Event Independence  
 Three events A, B, C are mutually independent if:
-
+- $P(A\cap B)=P(A)\cdot P(B)$
+- $P(A\cap C)=P(A)\cdot P(C)$
+- $P(B\cap C)=P(B)\cdot P(C)$
+- $P(A\cap B\cap C)=P(A)\cdot P(B)\cdot P(C)$ 
 Important: pairwise independence does not imply mutual independence.
 
 Example: Consider throwing two fair six-sided dice. The sample space is $S=\{(i,j)|i,j\in\{1,\dots 6\}\}$ with 36 equiprobable outcomes.  
@@ -271,19 +298,30 @@ C={sum is 2, 7 , or 8}.
 
 Given:
 
-- $P(A) =$
-- $P(B) =$
-- $P(C) =$
+- $P(A) =\frac{6}{36}=\frac{1}{6}$
+- $P(B) =\frac{18}{36}=\frac{1}{2}$
+- $P(C) =\frac{12}{36}=\frac{1}{3}$
 
 Triple intersection:
+$$
+A\cap B\cap C=\{\{(4,4)\}\}
+$$
+- $P(A\cap B\cap C)=\frac{1}{36}$
+- $P(A\cap B\cap C)=P(A)\cdot P(B)\cdot P(C) = \frac{1}{6} \cdot \frac{1}{2}\cdot \frac{1}{3 }= \frac{1}{36}$
+- $P(B \cap C) = P(B)\cdot P(C)$
+	- $\frac{11}{36}\not=\frac{1}{2}\cdot \frac{1}{3}\implies$ $B$ and $C$ are not independent 
 
-So $B$ and $C$ are
+So $B$ and $C$ are **not independent** 
 
-Therefore:
+Therefore: 
+$$
+P(A\cap B\cap C) = P(A)\cdot P(B)\cdot(C)
+$$
+- Does not imply pairwise independence
 
 Conclusion
 
-- Triple product identity is to guarantee full independence.
+- Triple product identity is to **not enough** guarantee full independence.
 - For three events to be fully independent:
     1. All three pairwise combinations must be independent.
     2. The triple intersection must match the product:  
