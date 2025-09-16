@@ -49,3 +49,10 @@ Probability of disease in the population.
 |       | $TPR =\frac{TP}{TP+FN}$ $FNR=\frac{FN}{TP+FN}$ | $TNR=\frac{TN}{FP+TN}$ $FPR = \frac{FP}{FP+TN}$ | $Prev=\frac{TP+FN}{TP+FN+FP+TN}$ |
 
 
+# Bayes Theorem
+$$
+P(A|B)=\frac{P(B|A)\cdot P(A)}{P(B|A)\cdot P(A)+ P(B|A^c)\cdot P(A^c)}
+$$
+- This is useful because you can switch the order of the conditional and solve without needing $P(A\cap B) \text{ or }P(B)$
+- Derivation comes from the addition rule and multiplication rule.
+

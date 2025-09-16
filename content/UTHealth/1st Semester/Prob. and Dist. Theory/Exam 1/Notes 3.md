@@ -77,7 +77,7 @@ Candies=∗, Bars=|(Separate Children):
 $$
 {8+3-1 \choose 3-1} = {10 \choose 2} = 45
 $$
-Note: this is also ${10 \choose_{8}}$, top is number of bars and candies, bottom is number of bars
+Note: this is also $10 \choose_{8}$, top is number of bars and candies, bottom is number of bars
 —  
 **Special case 2:** Each child gets at most 6
 
