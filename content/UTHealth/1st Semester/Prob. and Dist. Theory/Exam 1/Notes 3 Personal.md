@@ -58,5 +58,41 @@ $$
 yea idk. ill need to ask.
 
 
+### Question: You have 7 balls and 4 urns. You randomly place each ball into an urn. What is the prob. each urn has at most 2 balls? 
 
+##### Answer: 
+- Total number of ways to organize 7 balls in 4 urns: ${7+ 4 -1 \choose 4-1}= 120$ 
+- Ways to arrange 7 balls into 4 urn s.t. each urn has at most 2: 
+	- The only options is that 3 urns have 2 balls and 1 urn has 1 ball. 
+	- So its just how can you arrange that one ball? 4 different ways.?  
 
+$$
+= \frac{4}{{7+ 4 -1 \choose 4-1}}=\frac{4}{120}=\frac{1}{30}
+$$
+
+### Question: You have 13 balls and 4 urns. You randomly place each ball into an urn. What is the prob. each urn has at most 5 balls? 
+
+### Answer: 
+ - Total number of ways to organize 13 balls into 4 urns: ${13 + 4 -1 \choose 4-1}=560$
+ - Ways to arrange 13 balls into 4 urns s.t. each urn as at most 5 balls. 
+	 - Might be easier to find complement here?
+		 - So 13 balls into 4 urns s.t. at least one urn as at least 6 balls? 
+
+Let $x_{i} =6 + y$ for some $y=0,\dots,7$, then
+$$
+\begin{align}
+&x_{i}+x_{j}+x_{k}+x_{l}= 13  \\
+&\implies 7+y+x_{j}+x_{k}+x_{l}=13 \\
+ & \implies y +x_{j}+x_{k}+x_{l}= 7
+\end{align}
+$$
+so the number of ways to arrange 13 balls into 4 urns s.t. each urn as at least 6 balls is 
+$$
+4\cdot {7+4-1 \choose 4-1} = 4 \cdot {10 \choose 3} = 480
+$$
+ 
+Take the complement of this with the total $560 - 480 = 80$, therefore
+$$
+= \frac{80}{560}?
+$$
+I think this is right.
