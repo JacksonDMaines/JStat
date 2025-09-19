@@ -8,5 +8,9 @@
 # Exam 1
 - [[Notes 1|Lecture Notes 1]]
 - [[Notes 2|Lecture Notes 2]]
+- [[Notes 3|Lecture Notes 3]]
+- [[Notes 3.5|Lecture Notes 3.5]]
+- [[Notes 3 Personal|Lecture Notes 3 Extra]]
+- [[Notes 4|Lecture Notes 4]]
 
 

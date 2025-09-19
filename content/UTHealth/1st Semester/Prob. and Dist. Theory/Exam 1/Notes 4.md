@@ -133,9 +133,9 @@ $$Xi=\begin{cases}
 
 Let $H=\sum_{i=1}^{100}X_{i}$: total number of heads
 
-Step 1:Compute expected value of each $Xi$
+Step 1: Compute expected value of each $Xi$
 
-Step 2:Use linearity of expectation for the function $H=\sum_{i=1}^{100}X_{i}$
+Step 2: Use linearity of expectation for the function $H=\sum_{i=1}^{100}X_{i}$
 
 **Example:** Let $X$ be a random variable with known expected value:
 

@@ -98,5 +98,8 @@ To check independence
 
 **Question:** Let $A$ and $B$ be events that are both disjoint and independent. Is it true that both $P(A)$ and $P(B)$ are both 0, or is just one being 0 satisfactory? 
 
-**Answer:**
+**Answer:** It can only be $A$. Think about definition of $P(A|B)$, $P(B)$ is in the denominator so it. cant be 0. 
+
+
+
 
