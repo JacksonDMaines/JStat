@@ -50,12 +50,10 @@ $$
 {n-1 \choose k-1}
 $$
 - How to organize $n$ items in $k$ number of bins such that each bin as at least 1 item. 
-- Pretty sure this scales, like ${n-2 \choose k-2}$ would be ways to organize $n$ items into $k$ bins such that each bin gets at least 2 items.
-- **Note:** This is pretty much the same thing as **No Minimum**, ${n-1 \choose k-1}={(n-k\cdot min)+k-1 \choose k -1}$
+- Pretty sure this scales, like ${n-2 \choose k-2}$ would be ways to organize $n$ items into $k$ bins such that each bin gets at least 2 items. (NOT SURE IF THIS IS TRUE.....)
 
 ## Maximum 
-
-yea idk. ill need to ask.
+- You gotta make an equation with $x_i$'s equal to the number of stars. Each $x_i$ is a bin that you can define to hold as many or as little stars as you need, but this needs to be reflected in the right hand side of the equality. 
 
 
 ### Question: You have 7 balls and 4 urns. You randomly place each ball into an urn. What is the prob. each urn has at most 2 balls? 
