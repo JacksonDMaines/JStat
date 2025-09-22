@@ -52,75 +52,117 @@ Interpretation:
 
 - Total probability across all possible outcomes must equal 1.
 
-Example:
+**Example:**
 
 Let $X$ be the maximum of two rolls of a four-sided die. The sample space:
 
 Then, for r.v. $X$, we have:
 
+|              | 2nd Roll |       |       |       |
+| ------------ | -------- | ----- | ----- | ----- |
+| **1st Roll** | **1**    | **2** | **3** | **4** |
+| **1**        | 1        | 2     | 3     | 4     |
+| **2**        | 2        | 2     | 3     | 4     |
+| **3**        | 3        | 3     | 3     | 4     |
+| 4            | 4        | 4     | 4     | 4     |
+
+
+| $X$         | 1              | 2              | 3              | 4              |
+| ----------- | -------------- | -------------- | -------------- | -------------- |
+| $f(x)=P(X)$ | $\frac{1}{16}$ | $\frac{3}{16}$ | $\frac{5}{16}$ | $\frac{7}{16}$ |
+
+
+
 Check:
 
 ### 2.2 Cumulative Distribution Function (CDF)
 
-**Definition:** The CDF of a discrete random variable $X$is:
+**Definition:** The CDF of a discrete random variable $X$ is:
+$$
+F(X) = P[X\leq x]=\sum_{x_{i}\leq x}f(x_{i}) 
+$$
 
 **Properties:**
 
-1. ___
-2. F(x) is non-decreasing:
-3. F(x) is right-continuous:
-
-Step function:$F(x) =P[X≤x]$, where $X=max(\text{two 4-sides dices})$ 
+1. $\lim_{ x \to \infty }F(x) = 1$ and $\lim_{ x \to -\infty }F(x)=0$
+2. F(x) is non-decreasing: $F(a)\leq F(b)$ for $a\leq b$
+3. F(x) is right-continuous: $\lim_{ h \to 0^+ }F(x+h)=F(x)$
+ 
 
 ### 2.3 Recovering PMF from CDF
 
 Let $x_{1} < x_{2} < x_{3} <···$ be the possible values of $X$.
+$$
+\begin{align}
+&f(x_{1}) = F(x_{i}) \\
+&\vdots \\
+&f(x_{j}) = F(x_{j})-F(x_{j-1}) \text{ for }j\geq 2
+\end{align}
+$$
 
 This shows the step-size (jumps) of the CDF equals the probabilities at those points.
 
-**Example:** A die is rolled once. What is the probability of each outcome from 1 to 6? How does  
-the probability accumulate?
-
-**PMF:**
-
-**CDF:**
-
 **Example:** Two fair 6-sided dice are rolled. What is the probability of the sum of the two dice?
 
-**PMF:**
+**PMF:** $P(X=x) = \frac{\text{Number of outcomes with sum of x}}{36}$
 
-Selected PMF values:
+|            | Dice 1 |       |       |       |       |       |
+| ---------- | ------ | ----- | ----- | ----- | ----- | ----- |
+| **Dice 2** | **1**  | **2** | **3** | **4** | **5** | **6** |
+| **1**      | 2      | 3     | 4     | 5     | 6     | 7     |
+| **2**      | 3      | 4     | 5     | 6     | 7     | 8     |
+| **3**      | 4      | 5     | 6     | 7     | 8     | 9     |
+| **4**      | 5      | 6     | 7     | 8     | 9     | 10    |
+| **5**      | 6      | 7     | 8     | 9     | 10    | 11    |
+| **6**      | 7      | 8     | 9     | 10    | 11    | 12    |
 
-**CDF:**
+| X        | 2              | 3              | $\dots$ | 12             |
+| -------- | -------------- | -------------- | ------- | -------------- |
+| $P(X=x)$ | $\frac{1}{36}$ | $\frac{2}{36}$ | $\dots$ | $\frac{1}{36}$ |
+
 
 ## 3 Expected Value
 
-**Definition:** Let $X$ be a discrete random variable with probability mass function (PMF) $f(x) =  P[X=x]$. The expected value (or mean) of $X$, denoted by$ $ or $μ$, is defined as: provided
+**Definition:** Let $X$ be a discrete random variable with probability mass function (PMF) $f(x) =  P[X=x]$. The expected value (or mean) of $X$, denoted by$ $ or $μ$, is defined as:
+$$
+E[X] = \sum_{x}x\cdot f(x)
+$$
 
-that the sum exists.
+provided that the sum exists.
 
 - $x$: a possible value of the random variable.
 - $f(x)$: the probability that $X=x$.
-- The expected value is a of the possible values of $X$, weighted  
-    by their probabilities.
+- The expected value is a **weighted average** of the possible values of $X$, weighted by their probabilities.
 
 Interpretation: If the experiment is repeated many times, the average value of $X$ will approach  
 $E[X]$.
 
 **Example:** Let $X$ be the outcome of rolling a fair six-sided die. Possible values: $x= 1, 2 , 3 , 4 , 5 ,6$.  
-Each has probability: $P(X=x) =^16$
+Each has probability: $P(X=x) =\frac{1}{6}$ 
+$$
+E[X] = \sum_{x=1}^{6}x\cdot P(X=x) = \sum_{x=1}^{6}x \cdot \frac{1}{6} = \frac{21}{6 }= 3.5 
+$$
+
 
 **Example:** Let a random variable $X$ have the following PMF: $P(X= 1) = 0. 2$ , $P(X= 2) =.15$ , $P(X= 3) = 0. 3$
-
+$$
+E[X] = \sum_{x=1}^{3}x \cdot P(X=x) = 1(.2) + 2(.5)+3(.3) = 2.1
+$$
 ### 3.1 Functions on Expected Value
 
 #### 3.1.1 Linearity of Expectation
 
 Let $X$ and $Y$ be random variables, and let $a$ and $b$ be constants. Then:
-
+$$
+E[aX+bY] = a\cdot E[X] + b\cdot E[Y]
+$$
 #### 3.1.2 Function of a Random Variable
 
 Let $g(X)$ be a real-valued function of a discrete random variable $X$. Then:
+$$
+E[g(x)] = \sum_{x}g(x)\cdot f(x)
+$$
+**Note:** $g(E[X]) \not= E[g(X)]$ 
 
 You can compute the expectation of any function of $X$, such as $E[X^2 ]$, $E[lnX]$, etc.
 
@@ -134,9 +176,14 @@ $$Xi=\begin{cases}
 Let $H=\sum_{i=1}^{100}X_{i}$: total number of heads
 
 Step 1: Compute expected value of each $Xi$
+$$
+E[X_{i}]= \sum_{x=0}^{100}x \cdot \frac{1}{2} = 0\left( \frac{1}{2} \right) + 1\left( \frac{1}{2} \right) = \frac{1}{2}
+$$
 
 Step 2: Use linearity of expectation for the function $H=\sum_{i=1}^{100}X_{i}$
-
+$$
+E[H] = E\left[ \sum_{i=1}^{100}X_{i} \right] = \sum_{i=1}^{100}E[X_{i}] = 100 \cdot \frac{1}{2} = 50 
+$$
 **Example:** Let $X$ be a random variable with known expected value:
 
 $$
@@ -147,20 +194,28 @@ Now define a new variable:
 $$Y = 3X+ 7$$
 
 Use linearity of expectation:
+$$
+E[Y] = E[3X+7] = 3 \cdot E[X] + 7 = 3 \cdot 10 + 7 = 37
+$$
 
 Linearity of expectation allows direct computation without knowing the full distribution of the  
 new variable $Y$.
+
+**Note:** Expectation of a constant is the constant itself. 
 
 ## 4 Variance
 
 **Definition:** Let $X$ be a discrete random variable with expected value $μ=E[X$]. The variance  
 of $X$, denoted by $Var(X)$ or $σ^2$ , is defined as:
+$$
+Var(X) = E[(X-\mu)^2] = \sum_{x}(x-\mu)^2\cdot f(x)
+$$
 
 - It measures the spread or dispersion of the values of $X$ around the mean.
 - A higher variance indicates values are more spread out; A lower variance means they are  
     clustered near the mean.
 - The variance is in squared units, which is why we often use the square root — the standard  
-    deviation.
+    deviation. $\sigma = \sqrt{ Var(X) }$
 
 Alternative Formula for Variance
 
@@ -168,12 +223,22 @@ Alternative Formula for Variance
 $Var(X) =E[X^2 ]−(E[X])^2$ ,where $E[X^2 ] =\sum_{x}x^2\cdot f(x)$
 
 Derivation:
+$$
+\begin{align}
+Var(X) &= E[(X-\mu)^2]  = E[X^2-2X\mu+\mu^2] \\
+&=E[X^2]-2\mu E[X] +\mu^2 = E[X^2] - 2\mu \cdot \mu +\mu^2 \\
+&=E[X^2] - \mu^2 = E[X^2]-(E[X]^2) 
+\end{align}
+$$
 
 ### 4.1 Variance of a Linear Transformation
 
-Let $ $, where $a,b∈\mathbb{R}$, and $X$ is a random variable.
+Let $Y=aX+b$, where $a,b∈\mathbb{R}$, and $X$ is a random variable.
 
 Key Result:
+$$
+Var(Y) = Var(aX+bY) = a^2\cdot Var(X)
+$$
 
 Implications:
 
@@ -181,12 +246,20 @@ Implications:
 - Scaling by $a$ stretches or compresses variability by a factor of $a^2$.
 
 **Example:** If $Var(X) = 4$, then:  
-$$Var(3X+ 5) =$$
+$$Var(3X+ 5) = 3^2 \cdot 4 = 36$$
 
 ### 4.2 Variance of a Sum: Independent Random Variables
 
 Let $X$ and $Y$ be independent random variables. Then:
-
+$$
+Var(X+Y) = Var(X) + Var(Y)
+$$
 More generally:
+$$
+Var(aX+bY) = a^2\cdot Var(X) + b^2\cdot Var(Y)
+$$
 
 Without independence, include a covariance term:
+$$
+Var(X+Y) = Var(X) + Var(Y) +2\cdot Cov(X,Y)
+$$
