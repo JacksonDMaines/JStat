@@ -76,10 +76,24 @@ $$
 \sum_{k=1}^{\infty}P(X=k)=1
 $$
 
-**Expectation:**
-
-**Variance:**
-
+$$
+\begin{align}
+\sum_{k=1}^{\infty} P(X=k) = \sum_{k=1}^{\infty} (1-p)^{k-1}\cdot p = p\cdot \sum_{k=1}^{\infty}(1-p)^{k-1} = p\left[ \sum_{k=0}^{\infty}(1-p)^k \right] \\
+p\cdot\left( \frac{1}{1-(1-p)} \right) = p\cdot\left( \frac{1}{p} \right) 
+\end{align}
+$$
+**Expectation:** 
+$$
+\begin{align}
+E[X] &= \sum_{k=1}^{\infty}k\cdot P(X=k) = \sum_{k=1}^{\infty}k\cdot(1-p)^{k-1}\cdot p = p\sum_{k=1}^{\infty}k\cdot q^k-1 \text{ where }q = 1-p \\
+& = p\cdot \sum_{k=1}^{\infty} \frac{d}{dq}q^k = p \cdot \frac{d}{dq}\cdot \sum_{k=1}^{\infty} q^k = p\cdot \frac{d}{dq}\left[ \sum_{k=0}^{\infty}q^k -1 \right] = p \cdot \frac{d}{dq}\left[ \frac{1}{1-q}-1 \right] \\
+& =p\cdot \frac{d}{dp}\left[ \frac{1-(1-q)}{1-q} \right] = p \cdot \frac{d}{dp}\left[ \frac{q}{1-q} \right] = p \cdot \frac{1}{(1-q)^2} = p\cdot \frac{1}{p^2} = \frac{1}{p}
+\end{align}
+$$
+**Variance:** No proof in class
+$$
+Var[X] = \frac{1-p}{p^2}
+$$
 **Additional Properties:**
 
 - Lack of memory: $P(X > s+t|X > s) =P(X > t)$
@@ -95,6 +109,9 @@ Let $X$ be the number of type 1 elements (successes) in the sample.
 $Notation:$ $X∼Hyp(N,K,n)$
 
 $PMF:$
+$$
+P(X=x) = \frac{{K \choose x}{N-k \choose n-x}}{{N \choose n}} \text{ , } max(0,n+K-N)\leq x\leq min(K,n)
+$$
 
 ### 4.1 Hypergeometric Distribution - Properties
 
@@ -107,6 +124,7 @@ $$
 $$
 
 Now we need to show that $\sum_{k}{K \choose k}{N-K \choose n-k}={N \choose n}$.
+- Logic follows, multiple all ways to choose $k$ successes and all ways to choose $n-k$ fails then sum for all $k$  
 
 Let’s think about this combinatorically. The left side counts the number of ways to:
 
@@ -120,8 +138,27 @@ $$
 $$
 
 **Expectation:**
+$$
+\begin{align}
+E[X] &= \sum_{x=0}^{n}x\cdot \frac{{K\choose x}{N-k \choose n-x}}{{N \choose n}} = \sum_{x=1}^{n}x\cdot \frac{{K\choose x}{N-k \choose n-x}}{{N \choose n}}  \\ \\
 
-**Variance:**
+&Note: x\cdot {K \choose x} = K \cdot {K-1 \choose x-1} \text{ and } {N \choose n} = \frac{N}{n}{N-1 \choose n-1} \\
+ \\
+&= \sum_{x=1}^{n}\frac{k\cdot {K-1\choose x-1}{N-k \choose n-x}}{\frac{N}{n}\cdot{N-1 \choose n-1}} = \sum_{x=1}^{n} \frac{nk}{N}\cdot \frac{ {K-1\choose x-1}{N-k \choose n-x}}{{N-1 \choose n-1}}  \\
+ \\
+& Note: \frac{ {K-1\choose x-1}{N-k \choose n-x}}{{N-1 \choose n-1}} \sim Hyp(N-1, K-1, n-1)  \\
+&\text{and } \sum P(X=k) = 1, \text{ so } \\
+ \\
+ \\
+&=\frac{nk}{N}(1) = \frac{nk}{N}
+\end{align}
+
+$$
+
+**Variance:** No proof in class
+$$
+Var[X] = n \cdot \frac{k}{N} \cdot\left( 1-\frac{k}{N} \right) \cdot\frac{N-n}{n-1}
+$$
 
 **Theorem:** The value of $N$ that maximizes $P(X=x)$ (as a function of $N$) occurs approximately  
 at:  $\hat{N} = \frac{nK}{x}$
