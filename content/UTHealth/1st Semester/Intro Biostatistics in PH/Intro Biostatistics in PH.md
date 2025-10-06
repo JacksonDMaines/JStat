@@ -10,3 +10,8 @@
 - [[Lecture 5|Lecture Notes 5]]
 - [[Lecture 6|Lecture Notes 6]]
 - [[Lecture 7|Lecture Notes 7]]
+
+# Exam 2
+- [[Lecture 8|Lecture Notes 8]]
+- [[Lecture 9|Lecture Notes 9]]
+- [[Lecture 10|Lecture Notes 10]]

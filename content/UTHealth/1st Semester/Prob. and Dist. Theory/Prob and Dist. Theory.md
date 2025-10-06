@@ -12,5 +12,9 @@
 - [[Notes 3.5|Lecture Notes 3.5]]
 - [[Notes 3 Personal|Lecture Notes 3 Extra]]
 - [[Notes 4|Lecture Notes 4]]
+- [[UTHealth/1st Semester/Prob. and Dist. Theory/Exam 1/Notes 5|Lecture Notes 5]] 
 
+# Exam 2
+- [[UTHealth/1st Semester/Prob. and Dist. Theory/Exam 2/Notes 5|Lecture Notes 5]]
+- [[Notes 6|Lecture Notes 6]]
 

@@ -59,3 +59,5 @@ $$
 **Note:** There is a close relationship between Two-Sided Hypothesis test and confidence interval
 - If CI contains $\mu_{0}$ we could not reject
 - If CI doesn't contain $\mu_{0}$ we could reject
+
+
