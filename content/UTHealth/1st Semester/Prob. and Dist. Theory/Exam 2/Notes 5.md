@@ -168,6 +168,19 @@ $$
 P(X=k)=\frac{{K \choose k}{N-K \choose n-k}}{{N \choose n}}
 $$
 
+$$
+\text{if you can prove F(N)=P(X=k) is increasing when } N< \frac{nk}{x} \text{ and decreasing when } N > \frac{nk}{x} 
+$$
+$$
+\begin{align}
+\text{Consider:} &\frac{P\left( x=\frac{k}{n} \right)}{P\left( x= \frac{k}{N-1} \right)} = \frac{\frac{{K \choose k}{N-k \choose n-k}}{{N \choose n}}}{\frac{{K \choose k}{N-1k \choose n-k}}{{N-1 \choose n}}} \\
+& = \frac{(N-K)(N-n)}{N(N-K-n+K)}>1  \\
+&\implies (N - K)(N-n) > N(N-K-n+K) \\
+&\implies N^2-Nn-Nk+nK>N^2-NK-Nn+Nk \\
+&\implies Kn>Nk \implies N< \frac{nK}{k} \\
+&\text{ so } N= \frac{nK}{x} \text{ maximizes P(X=x)}
+\end{align}
+$$
 
 ### 4.2 Approximation
 
@@ -176,7 +189,7 @@ $$
 E[X] = n \cdot \frac{K}{N}, \space Var[X] = n \cdot \frac{K}{N}\cdot\left( 1- \frac{K}{N} \right)\cdot \frac{N-n}{N-1}
 $$
 
-For large $N$ and small $n$:
+For large $N$ and small $n$: $E[X]\approx np$ and $Var[X] \approx np(1-p)$ when $N$ is very large, $\frac{k}{N}=p$
 
 Thus, the hypergeometric distribution can be approximated by a binomial distribution when  
 sampling fraction $\frac{N}{n}$ is small.
@@ -184,6 +197,14 @@ sampling fraction $\frac{N}{n}$ is small.
 Example: Suppose $K= 4$ animals are tagged and released. A sample of $n= 3$ animals is taken  
 at random. Let $X$ be the number of tagged animals observed in the sample. Find $P(X= 1)$ as a  
 function of $N$ and find the value of $N$ that maximizes it.
+$$
+P(X=1) = \frac{{4 \choose 1}{N-4 \choose 2}}{{N \choose 3}} = \frac{4 \cdot {N-4 \choose 2)}}{N\choose 3}
+$$
+maximized when
+$$
+\hat{N} = \frac{nK}{x} = \frac{3\cdot 4}{1} = 12
+$$
+best estimate of population size is $N=12$
 
 ## 5 Poisson Distribution
 
@@ -207,30 +228,37 @@ $$
 P(X=k)=\frac{\lambda^ke^{-\lambda}}{k!}, \space k = 0,1,2,3 \dots 
 $$
 
-**Example:** Suppose on a given weekend, the number of traffic accidents at a certain intersection  
-follows a Poisson distribution with $λ= 0.7$. What is the probability that there will be at least $3$  
-accidents at the intersection during the weekend?
 
 ### 5.1 Poisson Distribution - Properties
 
 **Proof:** $\sum_{k=0}^{\infty} P(X=k)=1$
+$$
+\begin{align}
+&\sum_{k=0}^{\infty}\frac{\lambda^k\cdot e^{-\lambda}}{k!} = e^{-\lambda}\sum_{k=0}^{\infty}\frac{\lambda^k}{k!} \\ \\
 
+& Note: \sum_{k=0}^{\infty} \frac{\lambda^k}{k!} = e^\lambda \\
+ \\
+&= e^{-\lambda}\cdot e^\lambda = 1
+\end{align}
+$$
 **Expectation:**
+$$
+\begin{align}
+E[X]&= \sum k \cdot P(X=k) = \sum_{k=0}^{\infty}k \cdot \frac{\lambda^k\cdot e^{-\lambda}}{k!}  \\
+& = e^{-\lambda}\sum_{k=1}^{\infty} \frac{\lambda^k}{(k-1)!} = e^{-\lambda}\cdot \lambda \sum_{k=1}^{\infty} \frac{\lambda^{k-1}}{(k-1)!}  \\
+& = e^{-\lambda} \cdot \lambda \cdot e^{\lambda} = \lambda  
+\end{align}
+$$
 
 **Variance:**
+$$
+E[X^2] = \lambda^2 + \lambda 
+$$
+$$
+Var[X] = \lambda 
+$$
 
-**Example:** Among $400$ people, what is the probability that $3$ or more have a birthday on July  
-$4th$? (assume $365$ days)
 
-**Assumptions:**
-
-- Probability that any person has a birthday on July 4:
-- Let
-- Use Poisson approximation:
-
-**Probability of at least 3 birthdays:**
-
-$P(Y ≥3) = 1−P(Y = 0)−P(Y = 1)−P(Y = 2)$
 
 ## 6 Negative Binomial Distribution
 
@@ -242,14 +270,17 @@ $P(Y ≥3) = 1−P(Y = 0)−P(Y = 1)−P(Y = 2)$
     - And stop when we reach the $r-th$ success
 
 **Definition #1:**
+$$
+P(X=x|r,p) = {x-1 \choose r-1} p^r (1-p)^{x-r} \text{ for x = r, r+1, . . .}
+$$
 
 Let $X$ be the trial on which the $r-th$ success occurs in a sequence of $Bernoulli(p)$ trials.
 
 Then $X$ has a Negative Binomial distribution:
 
-- : number of successes
-- : trial of $r-th$ success
-- : probability of success on each trial
+- : $r$ number of successes
+- : $x$ trial of $r-th$ success
+- : $p$ probability of success on each trial
 
 **Definition #2:**
 
@@ -262,10 +293,22 @@ $$
 ### 6.1 Negative Binomial Distribution - Properties
 
 **Expectation:**
+$$
+\begin{align}
+E[Y] &= \sum_{y=0}^{\infty}y\cdot P(X=y) = \sum_{y=0}^{\infty}y \cdot {r+y-1\choose y} p^r(1-p)^y  \\
+& = \sum_{y=1}^{\infty}\frac{(r+y-1)!}{(y-1)!(r-1)!} p^r(1-p)^y = \sum_{y=1}^{\infty}\frac{r\cdot(r+y-1)!}{r\cdot (y-1)!(r-1)!} p^r(1-p)^y \\
+&=\sum_{y=1}^{\infty }r\cdot {r+y-1\choose y-1} p^r(1-p)^y \text{ let z = y-1 then,} \\
+ E[Y] &= r\cdot \sum_{z=0}^{\infty } {r+z\choose z} p^r(1-p)^{z+1}  \\
+& = \frac{r(1-p)}{p}  \sum_{z=0}^{\infty } {r+1 +z-1\choose z} p^{r+1}(1-p)^{z} = \frac{r(1-p)}{p} \\
+ \\
+&Note: \text{ look at proof of pmf for that last line}
+\end{align}
+
+$$
 
 **Variance:**
 
-Reparametrizing with $μ=\frac{r(1-p)}{p}$ gives:
+Reparametrizing with $μ=\frac{r(1-p)}{p}$ gives: $E[Y] = \frac{r(1-p)}{p} =\mu$ and $Var(Y) = \mu + \frac{1}{r}\mu^2$ therefore $Var(Y)>E[Y]$ 
 
 - Variance is a quadratic function of the mean.
 - $Var(Y)> E[Y]$, useful in modeling overdispersed count data.
@@ -278,12 +321,3 @@ The Negative Binomial distribution converges to the Poisson distribution as:
 $r→∞, p→ 1$ , such that $r(1−p)→λ$
 
 Then:  $E[Y]→λ, Var(Y)→λ$
-
-**Example:** Sampling fruit flies until 100 with vestigial wings are found. Let $X$ be the number of  
-trials needed. Then the probability that we will have to examine at least $N$ flies is:
-
-Or equivalently:
-
-- This is a Negative Binomial with $r= 100$.
-- Useful for biological population sampling.
-- Help to determine how many fruit flies we are likely to look at.
