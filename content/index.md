@@ -1,6 +1,10 @@
 ---
-title: Welcome!
+title: Welcome! :p
 ---
+# Quote
+```
+There is no shortcut to learning, unfortunately.
+```
 
 
 These are my notes. :)
@@ -9,6 +13,7 @@ These are my notes. :)
 
 
 [[Personal Study| Personal Studying Notes]]
+
 
 
 
@@ -24,8 +29,3 @@ npx quartz sync
 ```
 
 
-
-# Quote
-```
-There is no shortcut to learning, unfortunately.
-```

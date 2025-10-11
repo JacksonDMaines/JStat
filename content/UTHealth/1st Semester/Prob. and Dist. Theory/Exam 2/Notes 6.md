@@ -6,200 +6,240 @@
 probability distribution.
 
 The $k-th$ moment about the origin is defined as:
+$$
+\mu'_{k} = E[X^k] = \sum_{x}x^k\cdot P(X=x)
+$$
 
 Special Cases:
 
-- $1st$ moment
-- $2nd$ moment
+- $1st$ moment: $\mu'_{1} = E[X^1] = \mu = mean$
+- $2nd$ moment: $\mu'_{2} = E[X^2]$
 
-Central Moments
+### Central Moments
 
 The $k-th$ central moment is defined as:
+$$
+\mu_{k} = E[(x-\mu)^k], \text{ where } \mu = E[X]
+$$
 
 Special Cases:
 
-- $1st$ central moment
-- $2nd$ central moment
+- $1st$ central moment: $\mu_{1} = E[(X-\mu)^1] = E[X]- \mu = 0$
+- $2nd$ central moment: $\mu_{2} = E[(X-\mu)^2] = Var(X)$
 
 **Theorem:** Under some general conditions, the sequence of moments uniquely determines the  
 distribution.
 
 **Statement:** Let $X$ and $Y$ be two random variables. If their $i-th$ moments are equal for all  
 $i∈{ 1 , 2 , 3 ,...}$, that is,
-
-**Key Idea:**
+$$
+\mu'_{ix} = \mu'_{iy}, \forall i\geq0
+$$
+then $X$ and $Y$ follow the same distribution
 
 ## 2 Recall Taylor Series Expansion
 
 **General Taylor Series:**
-
-f(x) =f(x 0 ) +f′(x 0 )(x−x 0 ) +f  
-′′(x 0 )  
-2! (x−x^0 )
-
-(^2) +f′′′(x^0 )  
-3! (x−x^0 )  
-(^3) +···+f(n)(x^0 )  
-n! (x−x^0 )  
-n+···  
-**Maclaurin Series (whenx 0 = 0):**  
-**Example:**
+$$
+f(x) = f(x_{0}) + f'(x_{0})(x-x_{0}) + \frac{f''(x_{0})}{2!}(x-x_{0})^2 + \dots + \frac{f^{(n)}(x_{0})}{n!}(x-x_{0})^n + \dots
+$$
+**Maclaurin Series (when $X_{0} = 0$):**  
+$$
+f(x) = f(0) + f'(0)(x-0) + \frac{f''(0)}{2!}(x-0)^2 + \dots + \frac{f^{(n)}(0)}{n!}(x-0)^n + \dots
+$$
 
 ## 3 Moment Generating Function (MGF)
 
-**Definition:** If $X$ is a random variable, then the expected value
+**Definition:** If $X$ is a random variable, then the expected value:
+$$
+M_{X}(t) = E[e^{tx}]
+$$
 
-is called the moment generating function (MGF)of $X$, if this expected value exists for all  
+is called the **moment generating function (MGF)** of $X$, if this expected value exists for all  
 values of $t$ in some interval: $−h < t < h$ for $h >0$.
 
-Using the Taylor series expansion ofet $X$:
+Using the Taylor series expansion at zero of $e^{tx}$:
+
+$$
+\begin{align}
+M_{X}(t) &= E[e^{tx}] = E\left[ 1 + \frac{tx}{1} + \frac{t^2x^2}{2!} + \frac{t^3x^3}{3!} \right]  \\
+& = 1 +t\cdot E[x] + \frac{t^2}{2!}\cdot E[X^2] + \frac{t^3}{3!}\cdot E[X^3] + \dots \\
+&= 1 + t\mu'_{1} + \frac{t^2}{2!}\mu'_{2} + \frac{t^3}{3!}\mu'_{3} + \dots
+\end{align}
+$$
 
 ### 3.1 MGF and Moments via Derivatives
 
-Result 1:If $MX(t) =MY(t)$ for all $t∈(−h,h)⊂\mathbb{R}$, then
+**Result 1:** If $M_{X}(t) =M_{Y}(t)$ for all $t∈(−h,h)⊂\mathbb{R}$, then:
+- $X$ and $Y$ follow same distribution
 
-Theorem: If $MX(t)$ exists, then for any integer $k≥1$,
+**Theorem:** If $M_{X}(t)$ exists, then for any integer $k≥1$,
+$$
+\frac{d^k}{dt^k} \left. M_{X}(t) \right|_{t=0} = E[X^k]= \mu'_{k} 
+$$
 
-MGF Expansion and Derivatives:
+**MGF Expansion and Derivatives:**
+$$
+M_{X}(t) = 1 + \mu'_{1} + \frac{t^2}{2!}\mu'_{2} + \frac{t^3}{3!}\mu'_{3} + \dots 
+$$
 
-Taking derivatives:
+**Taking derivatives:**
+$$
+\begin{align}
+&M'_{X}(t) = 0 + \mu'_{1} + t\mu'_{2} + \frac{t^2}{3!}\mu'_{3} + \dots \\
+ & M'_{X}(0) = 0 + \mu'_{1} + 0 + 0 + \dots  \\
+ & M''_{X}(0) = 0 + 0+ \mu''_{2} + 0 + \dots  \\
+&\vdots
+\end{align}
+$$
 
-General Rule:
+**General Rule:**
+$$
+E[X^k] = M_{X}^{(k)}(0) = \frac{d^k}{dk}=\left. M_{X}(t)\right|_{t=0}
+$$
 
-Common Applications:
+**Common Applications:**
 
-- First moment (mean):
-- Second moment:
-- Variance: Var(X) =
+- First moment (mean): $M'_{X}(0) = E[X] = \mu$
+- Second moment: $M''_{X}(0) = E[X^2]$
+- Variance: $Var(X) = M''_{X}(0) - (M'_{X}(0))^2 = E[X^2] - E[X]^2$
 
 ## 4 MGF of Common Discrete Distributions
 
 ### 4.1 Poisson Distribution
 
-Let $X∼Poisson(λ)$, then P(X=x) =λxxe−!λ for $x= 0, 1 , 2 ,...$
+Let $X∼Poisson(λ)$, then $P(X=x) = \frac{\lambda^xe^{-\lambda}}{x!}$ for $x= 0, 1 , 2 ,...$
 
-Derivation of MGF:
+**Derivation of MGF:**
+$$
+\begin{align}
+M_{X}(t) &= E[e^{tx}] = \sum_{x=0}^{\infty}e^{tx}\cdot P(X=x) = \sum_{x=0}^{\infty}e^{tx}\cdot \frac{\lambda^xe^{-\lambda}}{x!} \\
+ & = e^{-\lambda}\sum_{x=0}^{\infty}\frac{(\lambda e^t)^x}{x!} = e^{-\lambda}\cdot e^{\lambda e^t} = e^{\lambda(e^t-1)}
+\end{align}
+$$
 
-Computing Moments:
+#### Computing Moments:
 
-First derivative:
+**First derivative:**
+$$
+M'_{X}(t) = e^{\lambda(e^t-1)}\cdot \lambda e^t
+$$
 
-Second derivative:
+**Second derivative:**
+$$
+M''_{X}(t) = e^{\lambda(e^t-1)}\cdot \lambda^2e^{2t} + \lambda e^t\cdot e^{\lambda(e^t-1)}
+$$
 
 Therefore:
 
-- Mean:E[X] =
-- Variance: Var(X) =
+- **Mean:** $E[X] =M'_{X}(t) = \lambda$
+- **Variance:** $Var(X) =M''_{X}(t)-(M'_{X}(t))^2 = \lambda^2 + \lambda - \lambda^2=\lambda$ 
 
 ### 4.2 Bernoulli Distribution
 
-Let $X∼Bernoulli(p)$, where P(X= 0) = 1−pandP(X= 1) =p.
+Let $X∼Bernoulli(p)$, where $P(X= 0) = 1−p$ and $P(X= 1) =p$.
 
-MGF:  
-MX(t) =E[etX] =
+**MGF:**  
+$$
+MX(t) =E[e^{tX}] = \sum_{x}e^{tx}\cdot P(X=x) = e^{t\cdot 0 }(1-p) + e^{t\cdot 1}\cdot p = 1-p+e^tp
+$$
 
 Computing Moments:
+- $M'_{X}(t) =pe^t⇒M'_{X}(0)=p = E[X]$
+- $M''_{X}(t) =pe^t⇒M''_{X}(0)=p=E[X^2]$
 
-```
-MX′(t) =pet⇒
-MX′′(t) =pet⇒
-```
 
-Variance:  
-Var(X) =MX′′(0)−(MX′(0))^2 =
+**Variance:**  
+$$Var(X) =M''_{X}(0)−(M'_{X}(0))^2 =p-p^2=p(1-p)$$
 
 ### 4.3 Binomial Distribution
 
-Let $X∼Binomial(n,p)$. The PMF isP(X=x) =(nx)px(1−p)n−xforx= 0, 1 ,...,n.
+Let $X∼Binomial(n,p)$. The PMF is $P(X=x) ={n \choose x}p^x(1−p)^{n−x}$ for $x= 0, 1 ,...,n$.
 
-Derivation of MGF:
+**Derivation of MGF:**
+$$
+\begin{align}
+M_{X}(t) &= E[e^{tX}] = \sum_{x}e^{tx}\cdot P(X=x) = \sum_{x=0}^{\infty}e^{tx} \cdot {n \choose x}p^x(1−p)^{n−x}  \\
+ & = \sum_{x=0}^{\infty} {n \choose x}(pe^t)^x(1−p)^{n−x}= (pe^t+1-p)^n
+\end{align}
+$$
 
-Computing Moments:
+#### Computing Moments:
 
-First derivative:
+**First derivative:**
+$$
+M'_{X}(t)= n(pe^t+1-p)^{n-1}\cdot pe^t
+$$
 
-Second derivative:
+**Second derivative:**
+$$
+M''_{X}(t) = n(n-1)(pe^t+1-p)^{n-2}\cdot (pe^t)^2 + pe^t\cdot n(pe^t+1-p)^{n-1}
+$$
 
 Therefore:
 
-- Mean:E[X] =np
-- Variance: Var(X) =MX′′(0)−(MX′(0))^2 =
+- **Mean:** $E[X] =np$
+- **Variance:** $Var(X) =M''_{X}(0)−(M'_{X}(0))^2 = n(n-1)p^2+np-(np)^2=np(1-p)$ 
 
 ### 4.4 Geometric Distribution
 
 Let $X∼Geometric(p)$, with PMF:
 
-```
-P(X=x) =qx−^1 p, x= 1, 2 , 3 ,..., whereq= 1−p
-```
 
-Derivation of MGF:
+$$P(X=x) =q^{x−1} p, \space x= 1, 2 , 3 ,..., where\space q= 1−p$$
 
-Computing the Mean:
 
-Mean from MGF:  
-μ=E[X] =MX′(0) =
+**Derivation of MGF:**
+$$
+\begin{align}
+M_{X}(t) &= E[e^{tX}] = \sum e^{tx}\cdot P(X=x) = \sum_{x=1}^{\infty} e^{tx}\cdot (q)^{t-1}p \\
+ & = \frac{p}{q}\cdot \sum_{x=1}^{\infty}e^{tx}\cdot q^x = \frac{p}{q}\cdot \sum_{x=1}^{\infty}(e^{t}\cdot q)^x = \frac{p}{q} \cdot qe^t\cdot \sum_{x=0}^{\infty}(e^{t}\cdot q)^x  \\
+& = pe^t \cdot \frac{1}{1-qe^t} = \frac{pe^t}{1-qe^t} \text{ for } t<-\ln(1-p)
+\end{align}
+$$
+
+**Computing the Mean:**
+$$
+M'_{X}(t) = \frac{pe^t}{(1-qe^t)^2}
+$$
+
+**Mean from MGF:**  
+$μ=E[X] =M'_{X}(0) = \frac{1}{p}$
 
 ## 5 Properties of the MGF
 
-Theorem: MGF of Linear Transformation
+**Theorem:** MGF of Linear Transformation
 
-LetY=aX+b. Then:  
-MY(t) =etb·MX(at)
+Let $Y=aX+b$. Then:  
+$$
+M_{Y}(t) =e^{tb}·M_{X}(at)
+$$
 
-Proof:  
-MY(t) =E[etY] =E[et(aX+b)]
+**Proof:**  
+$$
+M_{Y}(t) =E[e^{tY}] =E[e^{t(aX+b)}] = E[e^{atX+tb}] = E[e^{atX}e^{tb}]= e^{tb}E[e^{atX}] =e^{tb}\cdot M_{X}(at)
+$$
 
-Example: Suppose a random variableXhas MGF:
-
-```
-MX(t) =^4 e
-```
-
-```
-t
-5 −et=
-```
-
-Comparing with the MGF of the Geometric Distribution:
-
-```
-M(t) =
-```
-
-Now letY =X 2 + 3. Using the linear transformation property witha=^12 andb= 3:
-
-Example: Given MGF:  
-M(t) =^16 et+^26 e^2 t+^36 e^3 t
-
-SinceM(t) =E[etY] =∑yety·P(Y =y), we can read off the PMF directly:
-
-PMF ofY:
-
-Example: Given MGF:  
-M(t) =^16 e−t+^36 e^0 +^26 e^1.^5 t
-
-PMF ofY:
 
 ## 6 Chebyshev’s Theorem
 
-Theorem:For any random variableY with finite meanμand varianceσ^2 , for anyk >0,
+**Theorem:** For any random variable $Y$ with finite mean $μ$ and variance $σ^2$ , for any $k >0$,
 
 Equivalently:
 
-Use case:This theorem is useful when , but not the exact distribution.
+Use case: This theorem is useful when , but not the exact distribution.
 
-Note:Chebyshev’s inequality is mostly useful whenk.
+Note: Chebyshev’s inequality is mostly useful when $k$.
 
 ### 6.1 Proof of Chebyshev’s Theorem
 
-Goal:Prove thatP(|Y−μ|≥kσ)≤k^12.
+**Goal:** Prove that $P(|Y−μ|≥kσ)≤ \frac{1}{k^2}$.
 
-Proof:
+**Proof:**
 
-Therefore:
+**Therefore:**
 
-Dividing both sides byk^2 σ^2 :
+Dividing both sides by $k^2σ^2$ :
 
 or equivalently:
 
@@ -207,26 +247,16 @@ or equivalently:
 
 A more general form (Markov’s inequality):
 
-IfXis a random variable andh(X)≥0, then for anyc >0,
+If $X$ is a random variable and $h(X)≥0$, then for any $c >0$,
 
 Chebyshev’s theorem is a special case where.
 
 ### 6.3 Applications of Chebyshev’s Theorem
 
-Example 1:LetY be a random variable withμ= 100 andσ^2 = 100 (soσ= 10). Find valuesa  
-andbsuch thatP(a≤Y ≤b)≥^59.
+Example 1:LetY be a random variable with $μ= 100$ and $\sigma^2=100$ (so $\sigma=10$). Find values $a$  
+and $b$ such that $P(a≤Y ≤b)≥ \frac{5}{9}$.
 
 Using Chebyshev’s inequality:  
-P(|Y−μ|< kσ)≥ 1 −k^12
-
-Example 2: For a section of forest, the number of diseased trees per acre,Y, follows a Poisson  
-distribution with meanλ= 10. Each diseased tree costs$3.00 to treat with insecticide, and there  
-is also a fixed overhead of$50 equipment cost. LetC= 50 + 3Y be the total cost for a randomly  
-selected acre.
-
-Questions:
-
-1. Find the expected value and standard deviation ofC.
-2. Within what interval would you expectCto be with probability at least 0.75?
-
-Solution:
+$$
+P(|Y−μ|< kσ)≥ 1 − \frac{1}{k^2}
+$$
