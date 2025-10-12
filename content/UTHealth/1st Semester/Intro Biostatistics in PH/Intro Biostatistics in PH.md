@@ -9,7 +9,7 @@
 - [[UTHealth/1st Semester/Intro Biostatistics in PH/Exam 1/Lecture 4|Lecture Notes 4]]
 - [[Lecture 5|Lecture Notes 5]]
 - [[Lecture 6|Lecture Notes 6]]
-- [[Lecture 7|Lecture Notes 7]]
+- [[UTHealth/1st Semester/Intro Biostatistics in PH/Exam 1/Lecture 7|Lecture Notes 7]]
 
 # Exam 2
 - [[Lecture 8|Lecture Notes 8]]

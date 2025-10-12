@@ -59,5 +59,33 @@ $$
 **Note:** There is a close relationship between Two-Sided Hypothesis test and confidence interval
 - If CI contains $\mu_{0}$ we could not reject
 - If CI doesn't contain $\mu_{0}$ we could reject
+## Error
+- Type I and II
+
+|              | Fail to Reject $H_{0}$ | Reject $H_{0}$ |
+| ------------ | ---------------------- | -------------- |
+| $H_{0}$ True | good                   | Type 1 Error   |
+| $H_{A}$ True | Type 2 Error           | good           |
+- $P(Type\space 1) = \alpha$
+- $P(Type\space 2) =\beta$
+
+- Trade off relationship between $\alpha$ and $\beta$
+
+## Power
+- Way to measure the performance of a test
+- Higher power good
+
+$$
+Power = P(\text{rej } H_{0}|H_{1} \text{ true}) = 1-$\beta$
+$$
+- Looking for 80-90%
+- Increases with:
+	- Sig. Level
+	- SD $\sigma \downarrow$
+	- $n\uparrow$ 
+
+## Practical vs Statistical Sig. 
+- Sometimes P-Values lie
+- Be careful....
 
 
