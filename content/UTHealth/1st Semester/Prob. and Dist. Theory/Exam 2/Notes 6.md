@@ -224,39 +224,59 @@ $$
 ## 6 Chebyshev’s Theorem
 
 **Theorem:** For any random variable $Y$ with finite mean $μ$ and variance $σ^2$ , for any $k >0$,
+$$
+P(|Y-\mu|\geq k\sigma) \leq \frac{1}{k^2}
+$$
 
 Equivalently:
+$$
+P(|Y-\mu|< k\sigma) \geq 1- \frac{1}{k^2}
+$$
 
-Use case: This theorem is useful when , but not the exact distribution.
+Use case: This theorem is useful when $k$ and $\sigma$^2 are known, but not the exact distribution.
 
-Note: Chebyshev’s inequality is mostly useful when $k$.
+Note: Chebyshev’s inequality is mostly useful when $k$ is large (typically $k\geq 2$.
 
 ### 6.1 Proof of Chebyshev’s Theorem
 
 **Goal:** Prove that $P(|Y−μ|≥kσ)≤ \frac{1}{k^2}$.
 
 **Proof:**
+$$
+\begin{align}
+\sigma^2 &= E[(Y-\mu)^2] = \sum_{Y}(y-\mu)^2\cdot P(Y) \\
+&= \sum_{|Y-\mu|\geq k \sigma} (y-\mu)^2\cdot P(Y) + \sum_{|Y-\mu|< k \sigma} (y-\mu)^2\cdot P(Y)  \\
+&\geq \sum_{|Y-\mu|\geq k \sigma} (y-\mu)^2\cdot P(Y) \geq \sum_{|Y-\mu|\geq k \sigma} (k\sigma)^2\cdot P(Y) = k^2\sigma^2 \sum_{|Y-\mu|\geq k \sigma} P(Y) \\
+& = k^2\sigma^2\cdot P(|Y-\mu|\geq k\sigma) \\
+ \\
+&\implies \sigma^2 \geq k^2\sigma^2\cdot P(|Y-\mu|\geq k\sigma) \\
+& \implies 1 \geq k^2\cdot P(|Y-\mu|\geq k\sigma) \\
+& \implies \frac{1}{k^2} \geq  P(|Y-\mu|\geq k\sigma)
+\end{align}
 
-**Therefore:**
-
-Dividing both sides by $k^2σ^2$ :
-
-or equivalently:
-
+$$
 ### 6.2 General Inequality for Functions
 
 A more general form (Markov’s inequality):
 
 If $X$ is a random variable and $h(X)≥0$, then for any $c >0$,
+$$
+P(h(x)\geq c) \leq \frac{E[h(x)]}{c}
+$$
 
-Chebyshev’s theorem is a special case where.
+Chebyshev’s theorem is a special case where $h(x) = (x-\mu)^2$ and $c=k^2\sigma^2$.
 
 ### 6.3 Applications of Chebyshev’s Theorem
 
-Example 1:LetY be a random variable with $μ= 100$ and $\sigma^2=100$ (so $\sigma=10$). Find values $a$  
+Example 1:Let $Y$ be a random variable with $μ= 100$ and $\sigma^2=100$ (so $\sigma=10$). Find values $a$  
 and $b$ such that $P(a≤Y ≤b)≥ \frac{5}{9}$.
 
 Using Chebyshev’s inequality:  
 $$
 P(|Y−μ|< kσ)≥ 1 − \frac{1}{k^2}
 $$
+
+Let $\frac{5}{9} = 1- \frac{1}{k^2} \implies k=\frac{3}{2}$ and $P(\mu-k\sigma < Y<\mu + k\sigma)$ therefore, 
+- $a=\mu-k\sigma \implies a = 100 -\frac{3}{2}(10) = 85$
+- $b =\mu+k\sigma \implies b = 100 + \frac{3}{2}(10) = 115$
+

@@ -23,3 +23,25 @@ def model_one()
 - Variables inside a function are considered local variables, so you should be able to call them outside of function. 
 	- Example: *L* 
 
+
+You call the function by calling the name said function. 
+```python
+model_one()
+> Enter word: test
+> testtesttesttest
+```
+
+
+You can additionally add arguments to functions. As showed below: 
+```python
+def model_one(a)
+	word = input("Enter word: ")
+	ans = word * a
+	print(ans)
+	
+model_one(3)
+>Enter word: test
+>testtesttest
+```
+
+
