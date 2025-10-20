@@ -11,6 +11,8 @@
 - [[UTHealth/1st Semester/Intro Python Programming/Exam 1/Lecture 4|Lecture Notes 4]]
 - [[Lecture 5 and 6#Lecture 5|Lecture Notes 5]]
 - [[Lecture 5 and 6#Lecture 6|Lecture Notes 6]]
+- [[UTHealth/1st Semester/Intro Python Programming/Exam 1/Lecture 7|Lecture Notes 7]]
+
 
 
 

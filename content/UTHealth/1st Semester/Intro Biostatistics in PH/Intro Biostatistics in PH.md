@@ -15,3 +15,7 @@
 - [[Lecture 8|Lecture Notes 8]]
 - [[Lecture 9|Lecture Notes 9]]
 - [[Lecture 10|Lecture Notes 10]]
+- [[Lecture 11|Lecture Notes 11]]
+- [[Lecture 12|Lecture Notes 12]]
+- [[Lecture 13|Lecture Notes 13]]
+- [[Lecture 14|Lecture Notes 14]]
