@@ -247,44 +247,89 @@ $$
 1. **Verification**
 
 Proof.
+$$
+\begin{align}
+\int_{-\infty}^{\infty}f_{X}(x)dx &= \int_{-\infty}^{\infty} \frac{1}{\sqrt{ 2\pi \sigma^2 }}e^{\frac{-(x-\mu)^2}{2\sigma^2}} dx = \frac{1}{\sqrt{ 2\pi \sigma^2 }} \int_{-\infty}^{\infty}e^{\frac{-(x-\mu)^2}{2\sigma^2}} dx \\
+ \\
+&\text{Let u}= \frac{x-\mu}{\sqrt{ 2\sigma^2 }} \text{ then du}= \frac{1}{\sqrt{ 2\sigma^2 }} \implies \int_{-\infty}^{\infty} \frac{1}{\sqrt{ \pi }}e^{-u^2}du \text{ (even function)} \\
+ \\
+&= 2 \cdot \int_{0}^{\infty} \frac{1}{\sqrt{ \pi } }e^{-u^2}du = \frac{2}{\sqrt{ \pi }}\int_{0}^{\infty}e^{-u^2}du  \\
+ \\
+&\text{Let v}=u^2 \implies u = \sqrt{ v } \text{ and du}=\frac{du}{2\sqrt{ v }} \\
+ \\
+& = \frac{2}{\sqrt{ \pi }} \int_{0}^{\infty} \frac{1}{2\sqrt{ v }}e^{-v}dv = \frac{1}{\sqrt{ \pi }}\int_{0}^{\infty} v^{1/2-1}e^{-v}  \\
+&= \frac{1}{\sqrt{ \pi }}\Gamma\left( \frac{1}{2} \right) = \frac{1}{\sqrt{ \pi }}\sqrt{ \pi } = 1
+\end{align}
+$$
 
 2. **Mean**  
 $$E[X] =μ$$
 
 Proof.
+$$
+\begin{align}
+E[X]&= \int_{-\infty}^{\infty}xf_{X}(x)dx = \int_{-\infty}^{\infty}x \cdot \frac{1}{\sqrt{ 2\pi \sigma^2 }}e^{\frac{-(x-\mu)^2}{2\sigma^2}} dx = \int_{-\infty}^{\infty} \frac{x-\mu+\mu}{\sqrt{ 2\pi \sigma^2 }}e^{\frac{-(x-\mu)^2}{2\sigma^2}} \\
+&= \int_{-\infty}^{\infty} \frac{x-\mu}{\sqrt{ 2\pi \sigma^2 }}e^{\frac{-(x-\mu)^2}{2\sigma^2}} + \frac{\mu}{\sqrt{ 2\pi \sigma^2 }}e^{\frac{-(x-\mu)^2}{2\sigma^2}}= \int_{-\infty}^{\infty} \frac{x-\mu}{\sqrt{ 2\pi \sigma^2 }}e^{\frac{-(x-\mu)^2}{2\sigma^2}} + \mu \\
+ \\
+&\text{ Let u}= \frac{x-\mu}{\sqrt{ 2\sigma^2 }} \implies x = \sqrt{ 2\sigma^2 }\cdot u + \mu \text{ and dx}=\sqrt{ 2\sigma^2 }du \\
+ \\
+&=\frac{\sqrt{ 2\sigma^2 }}{\sqrt{ \pi }}\int_{-\infty}^{\infty}u\cdot e^{-u^2}du + \mu = 0 + \mu = u
+\end{align}
+$$
 
 3. **Variance**
-
+$$
+Var(x) = \sigma^2
+$$
 4. **MGF**
+$$
+M_{X}(t) = \exp\left\{ \mu t+ \frac{1}{2}\sigma^2t^2 \right\}
+$$
 
 ### 4.4 Standard Normal Distribution
 
 - Standard normal distribution $N(0,1)$  
 **Definition 8.** If $Z$ is a normally distributed random variable with parameters $μ= 0$ and  $σ= 1$, then $Z$ is said to have a standard normal distribution, whose density function is
-
+$$
+f(z) = \frac{1}{\sqrt{ 2\pi }}e^{-z^2/2}
+$$
 
 for−∞< z <∞.
 
-- Normal distribution is preserved for linear transformations. In other words, if $X∼N(μ,σ^2)$, then , for $a \not= 0$.
+- Normal distribution is preserved for linear transformations. In other words, if $X∼N(μ,σ^2)$, then$aX+b \sim N(a\mu+b, a^2\sigma^2)$ , for $a \not= 0$.
 - We can always transform a normal random variable $X ∼N(μ,σ^2 )$ to a standard normal random variable $Z$ by using the relationship
 - All problems about normal distribution can be transferred to standard normal distribution.
-
+$$
+z = \frac{x-\mu}{\sigma}
+$$
 ## 5 Beta Distribution
 
 ### 5.1 The Beta Function
 
 - To help us define the Beta distribution, we will make use of what we call the Beta function.  
 **Definition 9.** The Beta function $B(a,b)$ is a function of two positive values $a$ and $b$, and is defined to be:
+$$
+B(a,b) = \int_{0}^{1}x^{a-1}(1-x)^{b-1}
+$$
 
 **Theorem 6.** Let $a$ and $b$ be positive real values. Then,
+$$
+B(a,b) = \frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}
+$$
 
 ### 5.2 Beta Dist’n & Motivation
 
 - The Beta distribution is very useful for modeling bounded random variables with a nonuniform density.
 - The Beta density is a two-parameter density function defined between $0$ and $1$. It is often used to model proportions, such as the proportion of impurities in a chemical product or the proportion of time that a machine is under repair.  
 **Definition 10.** We say that the continuous random variable **X** has a Beta distribution with parameters $α$ and $β$ when $X$ has the PDF
+$$
+f_{X}(x) =\begin{cases}
+\frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}x^{\alpha-1}(1-x)^{\beta-1} & 0<x<1 \\
+0 & other
+\end{cases}
+$$
 
-,where $α > 0$ ,$β > 0$. We denote this.
+,where $α > 0$ ,$β > 0$. We denote this $X\sim Beta(\alpha, \beta)$.
 
 - Often times the pdf of $X∼Beta(α,β)$ is simplified to be:
 $$
@@ -302,6 +347,12 @@ Let $X∼Beta(α,β)$.
 1. **Verify**
 
 Proof.
+$$
+\begin{align}
+\int f_{X}(x)dx &= \int_{0}^{1}\frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}x^{\alpha-1}(1-x)^{\beta-1} = \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}\int_{0}^{1}x^{\alpha-1}(1-x)^{\beta-1} \\
+& = \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}\cdot B(\alpha, \beta) = \frac{1}{B(\alpha, \beta)}\cdot B(\alpha, \beta) = 1
+\end{align}
+$$
 
 2. **Mean**
 $$
@@ -309,22 +360,34 @@ E[X] = \frac{\alpha}{\alpha + \beta}
 $$
 
 Proof.
+$$
+\begin{align} 
+E[X] & = \int_{-\infty}^{\infty}x \cdot f_{X}(x)dx = \int_{0}^{1}x\cdot \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}x^{\alpha-1}(1-x)^{\beta-1} = \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}\int_{0}^{1}x^{\alpha}(1-x)^{\beta-1} \\
+& = \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)} \cdot B(\alpha+1, \beta) = \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)} \cdot \frac{\Gamma(\alpha+1)\Gamma(\beta)}{\Gamma(\alpha + \beta + 1)} = \frac{\alpha}{\alpha + \beta}
+\end{align}
+$$
 
 3. **Variance**  
 $$
 Var(x) = \frac{\alpha \beta}{(\alpha \beta + 1)(\alpha + \beta)^2}
 $$
 Proof
+$$
+\begin{align}
+&E[X^2] = \frac{\alpha(\alpha-1)}{(\alpha+\beta)(\alpha+\beta+1)}  \\
+& \implies Var(x) = E[X^2] - E[X]^2 = \frac{\alpha \beta}{(\alpha+\beta)^2(\alpha + \beta+1)}
+\end{align}
+$$
 
 ### 5.4 Special Cases
 
 - If $α=β= 1$, then $f(x) =\frac{1}{B(1 ,1)}$.  
-Since:
+Since: $B(1,1) = 1$
 
 
 We have$f(x) =\frac{1}{B(1 ,1)}= 1$, which is a uniform distribution on $(0,1)$.
 
-- If $α=β$, then $f(x) = \frac{x^{\alpha-1}(1-x)^{\alpha -1}}{B(\alpha, \alpha)}$ is symmetric about $x= 0.5$.
+- If $α=β$, then $f(x) = \frac{x^{\alpha-1}(1-x)^{\alpha -1}}{B(\alpha, \alpha)}$ is symmetric about $x= 0.5$. $E[X]=.5$
 
 ## 6 Log-Normal Distribution
 
@@ -335,14 +398,20 @@ A random variable $X$ has a log-normal distribution if $ln(X)∼N(μ,σ^2 )$.
 ### 6.2 PDF and CDF
 
 The probability density function is:
+$$
+f(x) = \frac{1}{x\sigma \sqrt{ 2\pi }}e^{\frac{-(\ln(x)-\mu)^2}{2\sigma^2}} \text{ for x>0}
+$$
 
 The cumulative distribution function is:
+$$
+F(X) = \int_{0}^{x} \frac{1}{t\sigma \sqrt{ 2\pi }}e^{\frac{-(\ln(t)-\mu)^2}{2\sigma^2}} dt
+$$
 
 ### 6.3 Moments
 
-**Expectation:** $E[X] =$.
+**Expectation:** $E[X] =e^{\mu + \frac{\sigma^2}{2}}$.
 
-**Variance:** $Var(X) =$.
+**Variance:** $Var(X) =(e^{\sigma^2}-1)e^{2\mu + \sigma^2}$.
 
 ## 7 Weibull Distribution
 
@@ -389,16 +458,16 @@ $$
 
 ### 9.1 Location parameter
 
-- A quantity $η$ is a location parameter of the distribution of $X$ if where $F_{0}$ and $f_{0}$ are valid cdf and pdf.
+- A quantity $η$ is a location parameter of the distribution of $X$ if $F(x:\eta)=F_{0}(x-\eta)$ or $f(x:\eta)=f_{0}(x-\eta)$where $F_{0}$ and $f_{0}$ are valid cdf and pdf.
 - $X∼N(μ,1)$. Then $μ$ is a location parameter. $F_{X}(x;μ) =F_{Z}(x−μ)$, where $F_{Z}$ is the cdf of standard normal distribution.
 - Exponential distribution models the waiting time for event. Suppose an event only occurs after $η$ hours. Then, we can model this event waiting time by $f(x;η) = exp(−(x−η))$, for  $x > η$. $f_{0}$ we can define as $Exp(1)$.
 
 ### 9.2 Scale parameter
 
-- A positive quantity $θ$ is a scale parameter for the distribution of $X$ if, where $F_{0}$ and $f_{0}$ are valid cdf and pdf.
-- $X∼Exp(θ)$ is a scaled distribution of $Exp(1)$ PDF:.
+- A positive quantity $θ$ is a scale parameter for the distribution of $X$ if $F(X: \theta)=F_{0}\left( \frac{x}{\theta} \right)$ or $f(x : \theta) = \frac{1}{\theta}f_{0}\left( \frac{x}{\theta} \right)$, where $F_{0}$ and $f_{0}$ are valid cdf and pdf.
+- $X∼Exp(θ)$ is a scaled distribution of $Exp(1)$ PDF:$f_{0} = e^{-x}, f_{X}(x) = \frac{1}{\theta}f_{0}\left( \frac{x}{\theta} \right)$.
 
 ### 9.3 Location-Scale Parameter
 
-- Quantities $η$ and $θ$ are called location-scale parameter for the distribution of $X$ if, where $F_{0}$ and $f_{0}$ are valid cdf and pdf.
+- Quantities $η$ and $θ$ are called location-scale parameter for the distribution of $X$ if$F(x: \eta , \theta) = F_{0}(\frac{x-\eta}{\theta})$ or $f(x: \eta, \theta) = \frac{1}{\theta}f_{0}(\frac{x-\eta}{\theta})$, where $F_{0}$ and $f_{0}$ are valid cdf and pdf.
 - $μ$ and $σ$ are location-scale parameter of $X∼N(μ,σ^2 )$.
