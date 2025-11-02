@@ -21,4 +21,8 @@
 - [[Notes 7|Lecture Notes 7]]
 - [[Notes 8|Lecture Notes 8]]
 
+# Exam 3
+- [[Notes 9| Lecture Notes 9]]
+
+
 

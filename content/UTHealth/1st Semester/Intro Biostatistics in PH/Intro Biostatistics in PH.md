@@ -12,10 +12,14 @@
 - [[UTHealth/1st Semester/Intro Biostatistics in PH/Exam 1/Lecture 7|Lecture Notes 7]]
 
 # Exam 2
-- [[Lecture 8|Lecture Notes 8]]
-- [[Lecture 9|Lecture Notes 9]]
+- [[UTHealth/1st Semester/Intro Biostatistics in PH/Exam 2/Lecture 8|Lecture Notes 8]]
+- [[UTHealth/1st Semester/Intro Biostatistics in PH/Exam 2/Lecture 9|Lecture Notes 9]]
 - [[Lecture 10|Lecture Notes 10]]
 - [[Lecture 11|Lecture Notes 11]]
 - [[Lecture 12|Lecture Notes 12]]
 - [[Lecture 13|Lecture Notes 13]]
 - [[Lecture 14|Lecture Notes 14]]
+- [[Lecture 15|Lecture Notes 15]]
+- [[Lecture 16|Lecture Notes 16]]
+
+# Exam 3

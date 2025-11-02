@@ -13,6 +13,10 @@
 - [[Lecture 5 and 6#Lecture 6|Lecture Notes 6]]
 - [[UTHealth/1st Semester/Intro Python Programming/Exam 1/Lecture 7|Lecture Notes 7]]
 
+# Exam 2
+- [[UTHealth/1st Semester/Intro Python Programming/Exam 2/Lecture 8|Lecture Notes 8]]
+- [[UTHealth/1st Semester/Intro Python Programming/Exam 2/Lecture 9|Lecture Notes 9]]
+
 
 
 
