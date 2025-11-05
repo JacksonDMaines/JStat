@@ -59,16 +59,26 @@ $$
 - While it is possible to have a joint distribution between a mixture of discrete and continuous random variables, for this course we will focus on the joint distribution between random variables that are either all discrete random variables or all continuous random variables.  
     
 **Definition:** Let $X_{1} , X_{2} ,... , X_{n}$ all be discrete random variables, each with the support $S_{1} ,... , S_{n}$, respectively. The joint probability mass function (joint PMF, for short) is
-
+$$
+p(x_{1}, x_{2}, \dots, x_{n}) = \begin{cases}
+P(X_{1}=x_{1}, X_{2}=x_{2}, \dots X_{n}=x_{n})& \text{ for } x_{1}\in S_{1},x_{2}\in S_{2},\dots,x_{n}\in S_{n} \\
+0 & \text{other}
+\end{cases}
+$$
 
 - **Note:** The probability $P(X_{1} =x_{1} , X_{2} =x_{2} ,... , X_{n}=x_{n})$ is equivalent to the statement.
+$$
+P((X_{1}=x_{1})\cap(X_{2}=x_{2})\cap\dots\cap(X_{n}=x_{n}))
+$$
 - Let$X_{1} ,... , X_{n}$ be discrete random variables with joint PMF $p(x_{1} ,... , x_{n})$. Let $S_{1} ,... , S_{n}$ be their corresponding supports. Then,  
     1. $p(x_{1} ,... , x_{n})≥ 0, ∀x_{1} ∈S_{1} ,... , x_{n}∈S_{n}$.  
-    2. $\sum_{x_{1}\in S_{1}}\sum_{x_{2}\in S_{2}}\dots\sum_{x_{n}\in S_{n}}p(x_{1},\dots, x_{n}) = 1$x
+    2. $\sum_{x_{1}\in S_{1}}\sum_{x_{2}\in S_{2}}\dots\sum_{x_{n}\in S_{n}}p(x_{1},\dots, x_{n}) = 1$
 ## 4 General Joint CDF
 
 **Definition:** Let $X_{1} , X_{2} ,... , X_{n}$ be (discrete or continuous) random variables. The joint cumulative distribution function for $X_{1} , X_{2} ,... , X_{n}$ is
-
+$$
+F(x_{1},x_{2},\dots x_{n}) = P(X_{1}\leq x_{1}, X_{2}\leq x_{2}, \dots, X_{n}\leq x_{n})
+$$
 for $−∞< x-1 , x_{2} ,... , x_{n}<∞$.
 
 1. If any of the values input into the CDF is−∞, the result is 0, i.e.,  
@@ -85,7 +95,10 @@ $$
 
 ## 5 General Continuous Joint PDF
 
-Definition: Let $X_{1} , X_{2} ,... , X_{n}$ be continuous random variables with joint cumulative distribution function $F(x_{1} , x_{2} ,... , x_{n})$. If there exists a non-negative function $f(x_{1} , x_{2} ,... , x_{n})$ such that
+**Definition:** Let $X_{1} , X_{2} ,... , X_{n}$ be continuous random variables with joint cumulative distribution function $F(x_{1} , x_{2} ,... , x_{n})$. If there exists a non-negative function $f(x_{1} , x_{2} ,... , x_{n})$ such that
+$$
+F(x_{1},x_{2},\dots,x_{n})=\int_{-\infty}^{x_{1}}\int_{-\infty}^{x_{2}}\dots \int_{-\infty}^{x_{n}}f(t_{1},t_{2},\dots,t_{n})dt_{n}dt_{n-1}\dots dt_{1}
+$$
 
 for all real values $x_{1},... , x_{n}$, then the function $f(x_{1} , x_{2} ,... , x_{n})$ is called the joint  
 probability density function of $X_{1} , X_{2} ,... , X_{n}$.
@@ -96,17 +109,23 @@ probability density function of $X_{1} , X_{2} ,... , X_{n}$.
 - It is worth noting that sometimes we only consider doing integration on the support of $X_{1} ,... , X_{n}$, where the support $S=\left\{(x_{1} ,... , x_{n}) :f(x_{1} ,... , x_{n})> 0 \right\}$is a region of $\mathbb{R}^n$.  
 
 **Theorem.** Let $X_{1} , X_{2} ,... , X_{n}$ be continuous random variables with joint PDF $f$, and let $A$ be a region in $S$. Then
+$$
+P((x_{1},x_{2},\dots,x_{n})\in A) = \int\dots \int_{A}f(x_{1},x_{2},\dots,x_{n})dx_{n}\dots dx_{1}
 
+$$
 
 - Specially,
+$$
+P(a_{1}\leq x_{1}\leq b_{1},a_{2}\leq x_{2}\leq b_{2}, \dots, a_{n}\leq x_{n}\leq b_{n}) = \int_{a_{1}}^{b_{1}}\int_{a_{2}}^{b_{2}}\dots \int_{a_{n}}^{b_{n}}f(x_{1},x_{2}, \dots, x_{n})dx_{n}\dots dx_{1}
+$$
 
 ## 6 Marginal Distribution and Conditional Distribution
 
 ### 6.1 Motivation
 
 - We began this section of the course discussing the situation in which we take multiple measurements at the same time and would like to model how they relate to each other.
-- In these cases, sometimes we would like to look at the underlying distribution of just one of those measurements. Other times we want to look at the distribution of a measurement, given the observation of a different measurement.
-- The first concept is encapsulated in what we call the_____ of a random variable, while the second concept is addressed with what we call the____.
+- In these cases, sometimes we would like to look at the **underlying distribution** of just **one** of those measurements. Other times we want to look at the **distribution** of a **measurement**, **given** the observation of a **different** **measurement**.
+- The first concept is encapsulated in what we call the *marginal distribution* of a random variable, while the second concept is addressed with what we call the *conditional distribution*.
 
 ### 6.2 Definitions
 
@@ -119,11 +138,17 @@ probability density function of $X_{1} , X_{2} ,... , X_{n}$.
 - First, we will give the definition when $X_{1} , X_{2}$ are both discrete.  
 
 **Definition:** Let $p$ be the joint PMF of $X_{1} , X_{2}$. Then the marginal distribution of $X_{1}$ is
+$$
+p_{1}(x_{1})=\sum_{x_{2}\in S_{2}}p(x_{1},x_{2})
+$$
 - Now we will give the definition when $X_{1} , X_{2}$ are continuous.
 
 **Definition:** Let $f$ be the joint PDF of $X_{1} , X_{2}$. Then the marginal distribution
 of $X_{1}$ is
+$$
+f_{1}(x_{1})= \int_{-\infty}^{\infty}f(x_{1},x_{2})dx_{2}
 
+$$
 - **Note:** when you are looking for a marginal distribution, the random variable you integrate out will depend on the question you are trying to answer.
 
 ### 6.4 Conditional Distributions
