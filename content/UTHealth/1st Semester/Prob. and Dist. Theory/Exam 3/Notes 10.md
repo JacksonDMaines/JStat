@@ -156,10 +156,14 @@ $$
 - Now, we will give the definition of the conditional distribution when $X_{1} , X_{2}$ are both discrete.  
 
 **Definition:** Let p be the joint PMF (PDF) of $X_{1} , X_{2}$ , and let $p_{2}$ be the marginal PDF of $X_{2}$. Then the conditional distribution of $X_{1}$ given $X_{2} =x_{2}$ (denoted $X_{1} |X_{2} =x_{2}$ ), where $x_{2}$ is in the support of $X_{2}$ , is
-
+$$
+p_{1|2}(x_{1}) = \frac{p(x_{1},x_{2})}{p_{2}(x_{2})} = \frac{\text{joint pmf}}{\text{marginal pmf}}
+$$
 - And when $X_{1} , X_{2}$ are continuous, the definition is as follows:  
 **Definition:** Let $f$ be the joint PDF of $X_{1} , X_{2}$ , and let $f_{2}$ be the marginal  PDF of $X_{2}$. Then the conditional distribution of $X_{1}$ given $X_{2} =x_{2}$ (denoted  $X_{1} |X_{2} =x_{2}$ ), where $x_{2}$ is in the support of $X_{2}$ , is
-
+$$
+f_{1|2}(x_{1}) = \frac{f(x_{1},x_{2})}{f_{2}(x_{2})}
+$$
 ### 6.5 Notes
 
 - **Note:** both marginal and conditional distributions are still distributions in their own right.
@@ -179,11 +183,14 @@ $$
 
 - Let $X_{1} , X_{2}$ be random variables with joint CDF $F$, and with marginal CDFs $F_{1}$ and $F_{2}$ , respectively.  
 
-**Definition:** $X_{1}$ and $X_{2}$ are said to be *independent* if
+**Definition:** $X_{1}$ and $X_{2}$ are said to be ***independent*** if
+$$
+F(x_{1},x_{2}) = F_{1}(x_{1})\cdot F_{2}(x_{2}), \space \forall x_{1},x_{2}
+$$
 
 
 **Definition:** If two random variables are not independent, then they are said
-to be *dependent*.
+to be ***dependent***.
 
 ### 7.3 Theorems
 
@@ -194,7 +201,10 @@ to be *dependent*.
 
 - The second theorem has to do with when $X_{2}$ and $X_{2}$ are continuous.
 
-**Theorem:** Let $X_{1}$ and $X_{2}$ be continuous random variables with joint PDF $f$ and marginal PDFs $f_{1}$ and $f_{2}$ , respectively. Then $X_{1}$ and $X_{2}$ are independent iff
+**Theorem:** Let $X_{1}$ and $X_{2}$ be continuous random variables with joint PMF $f$ and marginal PMFs $f_{1}$ and $f_{2}$ , respectively. Then $X_{1}$ and $X_{2}$ are independent iff
+$$
+p(x_{1},x_{2})=p_{1}(x_{1})\cdot p_{2}(x_{2}), \space \forall x_{1},x_{2}
+$$
 
 
 - The third theorem gives us an extra tool when $X_{1}$ and $X_{2}$ are continuous.
@@ -204,9 +214,12 @@ to be *dependent*.
 $f$. If for constant values $a, b, c, d$ ($a < b, c < d$) the pdf $f$ is positive only
 when $a ≤x_{1} ≤ b$ and $c≤x_{2} ≤d$, and zero otherwise, then $X_{1}$ and $X_{2}$ are
 independent iff
-
+$$
+f(x_{1},x_{2})=g(x_{1})\cdot h(x_{2})
+$$
 
 for some functions $g$ and $h$.
+- **Note:** This is only works over a rectangular area! 
 
 - The theorem specifically applies when the support of $X_{1}$ and $X_{2}$ do not depend on each other.
 - Basically, if the PDF is positive over a square region of space, then if the PDF can be written as the product of a function of $x_{1}$ and a (different) function of $x_{2}$ , then $X_{1}$ and $X_{2}$ are independent.
