@@ -16,20 +16,35 @@ $$
 ### 1.2 Theorems
 - As one might expect, our expectation theorems can be extended into multivariate expectation.  
 **Theorem**  Let $X_{1} ,...,X_{n}$ be random variables and let $c$ be a real valued constant. Then
+$$
+E[c] = c
+$$
 
 **Theorem** Let $X_{1} ,...,X_{n}$ be random variables, let $c$ be a real valued constant and let $g$ be a real valued function defined over all possible values of ($X 1 ,...,Xn$). Then
-
+$$
+E[cg(x_{1},x_{2}, \dots , x_{n})] = c\cdot E[g(x_{1}, x_{2}, \dots,x_{n})]
+$$
 
 **Theorem** Let $X_{1} ,...,X_{n}$ be random variables and let $g_{1} ...g_{k}$ be real valued functions defined over all possible values of ($X_{1} ,...,X_{n}$). Then
-
+$$
+E\left[ \sum_{i=1}^{k}g_{i}(x_{1},x_{2}, \dots ,x_{n}) \right] = \sum_{i=1}^{k}E[g_{i}(x_{1},x_{2}, \dots ,x_{n})]
+$$
 - We also have a theorem for when the random variables are independent.  
-Theorem Let $X_{1} ,X_{2}$ be random variables and let $g$ and $h$ be real values functions defined over the supports of $X_{1}$ and $X_{2}$ , respectively. If $X_{1}$ and $X_{2}$ are independent, then
-
+**Theorem** Let $X_{1} ,X_{2}$ be random variables and let $g$ and $h$ be real values functions defined over the supports of $X_{1}$ and $X_{2}$ , respectively. If $X_{1}$ and $X_{2}$ are independent, then
+$$
+E[g(x_{1})h(x_{2})] = E[g(x_{1})]E[h(x_{2})]
+$$
 
 Here we will do the proof when $X_{1}$ and $X_{2}$ are continuous with joint PDF $f$ and marginal PDFs $f_{1}$ and $f_{2}$.
 The proof when the random variables are discrete is similar
-
+- **Note:** I think when you split expectation you now use marginal pdfs, see proof?
 Proof.
+$$
+\begin{align}
+E[g(x_{1})h(x_{2})] &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}g(x_{1})h(x_{2})\cdot f(x_{1},x_{2})dx_{1}dx_{2} = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}g(x_{1})h(x_{2})f_{1}(x_{1})f_{2}(x_{2})dx_{1}dx_{2}  \\
+&=\int_{-\infty}^{\infty}g(x_{1})f_{1}(x_{1})dx_{1}\cdot \int_{-\infty}^{\infty}h(x_{2})f_{2}(x_{2})dx_{2} = E[g(x_{1})h(x_{2})] 
+\end{align}
+$$
 
 ## 2 Covariance
 
@@ -39,28 +54,59 @@ Proof.
 - When two random variables are independent, there is no relationship between two random variables.
 - Covariance is how we will numerically summarize how closely related two random variables are.
 
-Example Suppose $X,Y$ are NOT independent. How can we measure the strength of their dependence? Make an ($x,y$) an consider how far it lies from ($μx,μy$)  
+**Example** Suppose $X,Y$ are NOT independent. How can we measure the strength of their dependence? Make an ($x,y$) an consider how far it lies from ($μx,μy$)  
 
 **Question:** Consider deviation$x−μx,y−μy$, $(x−μx)(y−μy)$
 
+| Region | $x-\mu_{x}$ | $y-\mu_{y}$ | $(x−μx)(y−μy)$ |
+| ------ | ----------- | ----------- | -------------- |
+| I      | -           | +           | -              |
+| II     | +           | +           | +              |
+| III    | +           | -           | -              |
+| IV     | -           | -           | +              |
+$$
+\begin{cases}
++ &I,IV \\
+- &I, III
+\end{cases}
+$$
 ### 2.2 Definitions
 
 - First we define the covariance of two random variables.  
 **Definition** The covariance between random variables $X_{1}$ and $X_{2}$ is
-
+$$
+Cov(x_{1},x_{2}) = E\left[[x_{1}- E[x_{1}]]\cdot [x_{2}- E[x_{2}]] \right]
+$$
+- **Note:** $Cov(X_{1},X_{1})=Var(X_{1})$
 ### 2.3 Theorems
 
 - We have a few theorems to help make finding the covariance easier.
 - Our first theorem is akin to our variance formula.  
 **Theorem** Let $X_{2}$ and $X_{2}$ be random variables with finite first moments (i.e. $E[X_{1} ]$and $E[X_{2} ]$are real valued). Then
-
+$$
+Cov(x_{1},x_{2}) = E[x_{1}\cdot x_{2}] -E[x_{1}]E[x_{2}]
+$$
 Proof.
+$$
+\begin{align}
+Cov(x_{1},x_{2})&=  E\left[[x_{1}- E[x_{1}]]\cdot [x_{2}- E[x_{2}]] \right] = E[x_{1}x_{2}-x_{1}E[x_{2}]-x_{2}E[x_{1}]+E[x_{1}]E[x_{2}]] \\
+&= E[x_{1}x_{2}] -E[x_{1}]E[x_{2}] - E[x_{1}]E[x_{2}] + E[x_{1}]E[x_{2}]  \\
+&= E[x_{1}\cdot x_{2}] -E[x_{1}]E[x_{2}]
+\end{align}
+$$
 
 - Our second theorem relates to the relationship between independence and correlation.  
 **Theorem** Let $X_{1}$ and $X_{2}$ be random variables with finite first moments (i.e. $E[X_{1} ]$ and $E[X_{2} ]$are real valued). If $X_{1}$ and $X_{2}$ are independent, then
-
+$$
+Cov(x_{1},x_{2}) = 0 
+$$
 Proof.
-
+$$
+\begin{align}
+Cov(x_{1},x_{2}) &= E[x_{1}\cdot x_{2}] -E[x_{1}]E[x_{2}] =  \\
+&= E[x_{1}]\cdot E[x_{2}] - E[x_{1}]\cdot E[x_{2}] = 0
+\end{align}
+$$
 - The converse of above Theorem is not true!
 
 
@@ -75,7 +121,9 @@ Xin inches, Y in ozs (2)
 ```
 
 **Definition** The ***correlation coefficient*** between random variables $X_{1}$ and $X_{2}$ is:
-
+$$
+\rho(X,Y) = \frac{Cov(x,y)}{\sqrt{ Var(x)\cdot Var(y) }}
+$$
 Properties of $ρ(X,Y)$:
 
 1. $− 1 ≤ρ(X,Y)≤ 1$
@@ -86,6 +134,12 @@ Properties of $ρ(X,Y)$:
 5. If $X^*=\frac{X-\mu _{x}}{\sigma_{X}}$, $Y^*=\frac{Y-\mu_{y}}{\sigma_{Y}}$  
 $$
 \rho(X,Y) = Cov(X^*,Y^*)
+$$
+$$
+\begin{align}
+Cov(x^*, y^*) &= E[x^*y^*]-E[x^*]E[y^*] = E\left[ \frac{x-\mu_{x}}{\sigma _{x}} \cdot  \frac{y-\mu_{y}}{\sigma _{y}} \right] -E\left[\frac{x-\mu_{x}}{\sigma _{x}}\right]E\left[\frac{y-\mu_{y}}{\sigma _{y}}\right]  \\
+&=  \frac{E\left[[x- E[\mu_{x}]]\cdot [y- E[\mu_{y}]] \right]}{\sigma_{x}\cdot \sigma_{y}} = \frac{Cov(x,y)}{\sigma_{x}\sigma_{y}} = \rho(X,Y)
+\end{align} 
 $$
 6. $|ρ|= 1⇔Y=aX+b$ ,$a,b$ constants, i.e. perfect linear association between $X,Y$
 
@@ -123,11 +177,25 @@ $$
 
 Proof.
 $$
-Cov[U_{x},U_{y}] = \sum_{i=1}^{n}\sum_{j=1}^{m}a_{i}b_{j}Cov[X_{i},Y_{j}]
+\begin{align}
+Var(U_{x}) &= E[(U_{x}-E[U_{x}])^2] = E\left[ \left( \sum_{i=1}^n a_{i}x_{i} - \sum_{i=1}^{n}a_{i}\mu_{i} \right)^2 \right] = E\left[ \left( \sum_{i=1}^n a_{i}(x_{i}-\mu_{i})\right)^2 \right]  \\
+&= E\left[ \sum_{i=1}^n \sum_{j=1}^n a_{i}a_{j}(x_{i}-\mu_{i})(x_{j}-\mu_{j})\right]  \\
+&= \sum_{i=1}^n a_{i}^2E[(x_{i}-\mu_{i})^2] + \sum_{i=1}^n\sum_{j=1}^na_{i}a_{j}E[(x_{i}-\mu_{i})(x_{j}-\mu_{j})] \\
+&= \sum_{i=1}^n a_{i}^2Var(x_{i}) + \sum_{i=1}^n \sum_{j=1,i\not=1}^na_{i}a_{j}Cov(x_{i},x_{j})
+\end{align}
 $$
 Proof.
-
-
+$$
+Cov[U_{x},U_{y}] = \sum_{i=1}^{n}\sum_{j=1}^{m}a_{i}b_{j}Cov[X_{i},Y_{j}]
+$$
+$$
+\begin{align}
+Cov(U_{x},U_{y}) &= E[(U_{x}-E[U_{x}])(U_{y}-E[U_{y}])] \\
+& = E\left[ \left( \sum_{i=1}^na_{i}x_{i} - \sum_{i=1}^na_{i}\mu_{i} \right)\left( \sum_{j=1}^mb_{j}y_{j} - \sum_{j=1}^mb_{j}\mu_{j} \right) \right]  \\
+&= E\left[ \sum_{i=1}^na_{i}(x_{i}-\mu_{xi}) \cdot \sum_{j=1}^m  b_{j}(y_{j}-\mu_{yj}) \right] \\
+& = \sum_{i=1}^n\sum_{j=1}^ma_{i}b_{j}E[(x_{i}-\mu_{xi})(y_{j}-\mu_{yj})] = \sum_{i=1}^n\sum_{j=1}^ma_{i}b_{j}\cdot Cov(x_{i},y_{j})
+\end{align}
+$$
 ## 4 Conditional Expectation
 
 ### 4.1 Motivation
