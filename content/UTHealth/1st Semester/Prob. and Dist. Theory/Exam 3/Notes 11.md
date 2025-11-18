@@ -77,7 +77,13 @@ $$
 $$
 Cov(x_{1},x_{2}) = E\left[[x_{1}- E[x_{1}]]\cdot [x_{2}- E[x_{2}]] \right]
 $$
-- **Note:** $Cov(X_{1},X_{1})=Var(X_{1})$
+ **Note:** 
+- $Cov(X_{1},X_{1})=Var(X_{1})$
+- $Cov(X,a)=0$
+- $Cov(X,Y)=Cov(Y,X)$
+- $Cov(aX,bY)=ab\cdot Cov(X,Y)$
+- $Cov(X+a,Y+b)=Cov(X,Y)$
+- $Cov(aX+bY,cW+dV)= ac\cdot Cov(X,W)+ad\cdot Cov(X,V)+bc\cdot Cov(Y,W)+bd\cdot Cov(Y,V)$ 
 ### 2.3 Theorems
 
 - We have a few theorems to help make finding the covariance easier.
@@ -207,8 +213,14 @@ $$
 
 - The definition of the conditional expectation for discrete random variables is as follows:  
 **Definition** Let $X_{1}$ and $X_{2}$ be discrete random variables where the conditional distribution of $X_{1} |X_{2} =x_{2}$ is $p_{1 | 2} (x_{1} |x_{2} )$, and let $g$ be a real valued function defined for all possible values of $X_{1} |X_{2} =x_{2}$. Then the conditional expectation of $g(X_{1} )|X_{2} =x_{2}$ is
+$$
+E[g(X_{1})|X_{2}=x_{2}] = \sum_{x_{1}\in S_{i}}g(x_{1})\cdot P_{1|2}(x_{1}|x_{2})
+$$
 - And the definition of the conditional expectation for continuous random variables is as follows:  
 Definition Let $X_{1}$ and $X_{2}$ be continuous random variables where the conditional distribution of $X_{1} |X_{2} =x_{2}$ is $f_{1 | 2} (x_{1} |x_{2})$, and let $g$ be a real valued function defined for all possible values of $X_{1} |X_{2} =x_{2}$. Then the conditional expectation of $g(X_{1} )|X_{2} =x_{2}$ is
+$$
+E[g(x_{1})|X_{2}=x_{2}] = \int_{-\infty}^{\infty}g(x_{1})\cdot f_{1|2}(x_{1}|x_{2})dx_{1}
+$$
 
 ### 4.3 Theorems
 
@@ -218,6 +230,13 @@ $$
 E[g(X_{1} )] =E[E[g(X_{1} )|X-2 =x_{2}]]
 $$  
 Proof.  
+$$
+\begin{align}
+E[g(x_{1})] &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x_{1})\cdot f(x_{1},x_{2})dx_{1}dx_{2} = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x_{1})\cdot f_{1|2}(x_{1},x_{2})\cdot f_{2}(x_{2})dx_{1}dx_{2} \\
+&=\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}g(x_{1})\cdot f_{1|2}(x_{1},x_{2})dx_{1} \right]f_{2}(x_{2})dx_{2}  \\
+&= \int_{-\infty}^{\infty} E[g(X_{1})|X_{2}=x_{2}]\cdot f_{2}(x_{2})dx_{2} = E[E[g(X_{1})|X_{2}=x_{2}]]
+\end{align}
+$$
 - Here we present the proof when $X_{1}$ and $X_{2}$ are continuous. The proof is similar when $X_{1}$ and$X_{2}$ are discrete.
 - Conditional variance is defined in a similar fashion to conditional mean.  
 **Definition** $X_{1}$ and $X_{2}$ are two random variables, the conditional variance of $X_{1}$ given $X_{2} =x_{2}$ is
@@ -229,7 +248,14 @@ $$
 V[g(X_{1} )] =E[V[g(X_{1} )|X_{2} =x_{2} ]] +V[E[g(X_{1} )|X_{2} =x_{2} ]].
 $$
 Proof.
-
+$$
+\begin{align}
+Var(g(X_{1})) &= E[g(x_{1})^2]-E[g(x_{1})]^2 = E\left[E[g(x_{1})^2|X_{2}=x_{2}]\right] - E[E[g(x_{1})|X_{2}=x_{2}]]^2 \\
+&= E\left[E[g(x_{1})^2|X_{2}=x_{2}]\right] - E[E[g(x_{1})|X_{2}=x_{2}]]^2 + E[E[g(x_{1})|X_{2}=x_{2}]^2]- E[E[g(x_{1})|X_{2}=x_{2}]^2] \\
+&= E[E[g(x_{1})^2|X_{2}=x_{2}]- E[g(x_{1})|X_{2}=x_{2}]^2] + \Big[E[E[g(x_{1})|X_{2}=x_{2}]^2]- E[E[g(x_{1})|X_{2}=x_{2}]]^2\Big]  \\
+&= E[V[g(X_{1} )|X_{2} =x_{2} ]] +V[E[g(X_{1} )|X_{2} =x_{2} ]]
+\end{align}
+$$
 ### 4.4 Useful Facts
 
 1. $f_{X,Y}(x,y) =f_{X}(x)f_{Y|X}(y|x)$
