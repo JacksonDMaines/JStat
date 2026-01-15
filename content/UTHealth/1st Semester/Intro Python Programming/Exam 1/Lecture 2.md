@@ -10,7 +10,7 @@
 | =        | Assignment                    |
 
 ## Division
-Typical division utilize "**/**". This will always give you a [[Lecture 1#Variable Types|float]]. 
+Typical division utilize "**/**". This will always give you a [[UTHealth/1st Semester/Intro Python Programming/Exam 1/Lecture 1#Variable Types|float]]. 
 
 ### Floor Division
 Rounds normal division down to nearest integer. 
@@ -36,6 +36,6 @@ math.sqrt(2)
 math.pow(2, 4)
 ```
 
-Note: Any function called by math will result in a [[Lecture 1#Variable Types|float]]. Some built-in function will stay an [[Lecture 1#Variable Types|int]](for example pow).
+Note: Any function called by math will result in a [[UTHealth/1st Semester/Intro Python Programming/Exam 1/Lecture 1#Variable Types|float]]. Some built-in function will stay an [[UTHealth/1st Semester/Intro Python Programming/Exam 1/Lecture 1#Variable Types|int]](for example pow).
 
 

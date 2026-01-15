@@ -1,3 +1,4 @@
+## Day 1
 Population Mean $(\mu)$ --> Sample Mean $(\bar{X})$
 - **Population:** <u>Well defined set</u> of element
 - **I.I.D.:** Independent and Identically distributed 
@@ -39,3 +40,30 @@ and
 $$
 (n-1)s^2 = \sum_{i=1}^n (x_{i}-\bar{x})^2 = \sum_{i=1}^nx^2-n\bar{x}^2
 $$
+
+
+## Day 2
+ **Sample Variance:**
+$$
+S^2_{n} = \frac{1}{n-1}\sum_{i=1}^n(x_{i}-\bar{x}_{n})^2
+$$
+**Note:** $(n-1)S^2=\sum_{i=1}^n(x_{i}-\bar{x}_{n})^2=\sum_{i=1}^nx_{i}^2-n\bar{x}^2_{n}$
+
+Degrees of freedom:
+- Independent variables +1
+- Dependent variables -1
+
+**Corollary:**
+- $E[\bar{X}_{n}] = \mu$
+- $Var(\bar{X}_{n})= \frac{\sigma^2}{n}$
+
+**Unbias:** Mean of estimated quantity is quantity itself
+- IDK if this is the right def.
+
+**Theorem:** MGF of $\bar{X}$
+$$
+M_{\bar{X}}(t) = \left[ M_{X}\left( \frac{t}{n} \right) \right]^n
+$$
+**Theorem:** Let $r\leq s$ if $E[X^2]<\infty$ (i.e. it exists), then $E[X^r]<\infty$ 
+- Basically if the higher order moment exists then all the lower order moments exist. 
+
