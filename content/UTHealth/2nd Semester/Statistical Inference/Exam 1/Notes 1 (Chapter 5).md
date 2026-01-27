@@ -136,3 +136,31 @@ $$
 - $X\sim F_{p,q}\implies \frac{1}{X} \sim F_{q,p}$
 - $X\sim t_{q} \implies X^2 \sim F_{1,q}$
 - $X\sim F_{p,q} \implies \frac{\left( \frac{p}{q} \right)x}{\left( 1 + \left( \frac{p}{q} \right)x \right)} \sim Beta\left( \frac{p}{2}, \frac{q}{2} \right)$
+
+## Day 4
+
+### Order Statistics
+
+Single 
+$$
+f_{Y_{k}}(x) = \frac{n!}{(k-1)!1!(n-k)!} [F(X)]^{k-1}[1-F(x)]^{n-k}f(x)
+
+$$
+Joint
+$$
+f_{Y_{j}Y_{k}}(x,y) = \frac{n!}{(j-1)!(k-j-1)!(n-k)!}[F(x)]^{j-1}[F(y)-F(x)]^{k-j-1}[1-F(y)]^{n-k}f(x)f(y)
+$$
+
+**R and V?**
+$$
+R = X_{(n)}-X_{(1)}
+$$
+$$
+V = \frac{X_{n}+X_{1}}{2}
+$$
+$$
+f(R,V) = f_{X,Y}(r,v)\cdot|J|
+$$
+idk
+
+

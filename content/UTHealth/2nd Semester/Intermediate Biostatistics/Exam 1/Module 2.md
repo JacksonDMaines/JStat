@@ -29,3 +29,15 @@ $$
 $$
 Var(X) = E[X^2] -E[X]^2
 $$
+
+## Bernoulli 
++ Single Case of binomial dist. 
++ PMF $P(X=x)= p^x(1-p)^{1-x}$ when $x=0,1$
++ Sum of Bernoulli -> Binomial
++ $E[X]=p$ and $Var(X) = p(1-p)$
+
+## Binomial
+- Counts # of Success 
+- $P(X=x)={n \choose x}p^x (1-p)^{n-x}$ for $x=0,\dots,n$
+- $E[X]=np$ and $Var(X)=np(1-p)$
+- 
