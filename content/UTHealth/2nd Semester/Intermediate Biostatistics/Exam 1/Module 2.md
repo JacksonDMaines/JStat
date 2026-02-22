@@ -40,4 +40,26 @@ $$
 - Counts # of Success 
 - $P(X=x)={n \choose x}p^x (1-p)^{n-x}$ for $x=0,\dots,n$
 - $E[X]=np$ and $Var(X)=np(1-p)$
-- 
+
+# Poisson
+Applies to the number of events over a period of time, where the $\lambda$ is the average of the number of events
+$$
+P(X=k) = \frac{e^{-\mu}\mu^k}{k!}
+$$
+$k= 0,1,2,3, \dots$
+- Where $\mu = \lambda t$
+	- $\lambda is the rate$
+- **Assumption:**
+	- Rate is homogeneous over time 
+	- Independence
+- When $X\sim Pois(X)$
+	- $E[X]=\mu$
+	- $Var(X)=\mu$
+
+
+## Approximate Binomial with Poisson
+When $n$ is large and $p$ is small we can approximate a Binomial distribution with a Poisson distribution
+- $n\geq 100$
+- $p\leq 0.01$
+Then $\mu=np$
+

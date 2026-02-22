@@ -151,16 +151,119 @@ $$
 f_{Y_{j}Y_{k}}(x,y) = \frac{n!}{(j-1)!(k-j-1)!(n-k)!}[F(x)]^{j-1}[F(y)-F(x)]^{k-j-1}[1-F(y)]^{n-k}f(x)f(y)
 $$
 
-**R and V?**
+**Range and Midrange?**
 $$
-R = X_{(n)}-X_{(1)}
+\text{Range = }R = X_{(n)}-X_{(1)}
 $$
 $$
-V = \frac{X_{n}+X_{1}}{2}
+\text{Midrange = }V = \frac{X_{n}+X_{1}}{2}
 $$
 $$
 f(R,V) = f_{X,Y}(r,v)\cdot|J|
 $$
-idk
+## Day 5
+### Convergence
+$$
+\forall \epsilon < 0  \space \exists N \in \mathbb{N}_{0} \space s.t.\space  \forall n>N \space |a_{n}-a|< \epsilon
+$$
 
+
+#### Convergence in Probability 
+$\forall \epsilon < 0$
+$$
+\lim_{ n \to \infty } P(|X_{n}-x|\geq \epsilon) = 0
+$$
+or 
+$$
+\lim_{ n \to \infty } P(|X_{n}-x|< \epsilon) = 1
+$$
+then $X_{n}- > x$ in probability
+- **Note:** Second one is more useful
+
+#### Chebyshev's Inequality 
+$$
+P(|X-\mu|\geq t) \leq \frac{Var(x)}{t^2}
+$$
+#### Weak Law of Large Numbers
+$X_{i}$ are iid with $E[X_{i}]= \mu$ and $Var(X_{i})<\infty$, Let $\bar{X}_{n}= \frac{1}{n}\sum_{i=1}^nx_{i}$ then $\forall \epsilon < 0$ 
+$$
+\lim_{ n \to \infty } P(|\bar{X}_{n}-\mu| < \epsilon) =1
+$$
+then $\bar{X}_{n} \to \mu$ in probability
+
+#### Unbiased
+$T(X)$ if an unbiased estimator of $\theta$ if $E[T(X)] = \theta$
+
+#### Consistency
+$T_{n}(X)$ is a consistent estimator of $\theta$ if $T_{n}(X) \to \theta$ in probability
+
+#### Almost Sure Convergence
+$$
+P(\lim_{ n \to \infty } |X_{n}-x|< \epsilon) = 1
+$$
+then $X_{n}\to x$ almost surely
+
+- **Note:** almost surely implies convergence in probability
+
+#### Strong Law of Large Numbers
+$X_{1},X_{2}, \dots$ are iid and $\forall \epsilon<0$
+$$
+P(\lim_{ n \to \infty } |\bar{X}_{n}-\mu|<\epsilon) = 1
+$$
+that is $\bar{X}_{n}\to \mu$ almost surely
+
+
+#### Convergence in Distribution
+$$
+\lim_{ n \to \infty } F_{X_{n}}(x) = F_{X}(x) 
+$$
+$\forall x$ where $F_{X}(x)$ is continuous then $X_{n}\to x$ in distribution
+
+
+## Day 6
+#### Convergence of MGF's
+$Y_{n}$ has cdf $F_{Y_{n}}$ and MGF $M_{Y_{n}}(t)$ exists for all $|t|<h $ and $\forall n$
+$$
+\lim_{ n \to \infty } M_{Y_{n}}(t) = M(t)
+$$
+then $F_{Y_{n}}\to F_{Y}$ in distribution
+
+
+#### Central Limit Theorem
+$X_{i}\sim iid$ distribution and MGF exists
+$$
+\frac{\sqrt{ n }(\bar{X}-\mu)}{\sigma} \to N(0,1)
+$$
+in distribution when both $\mu$ and $\sigma^2$ exist
+
+Also Note:
+- $\sqrt{ n }(\bar{X}-\mu) \to N(0,\sigma^2)$ in distribution
+- $\sqrt{ n }(\bar{X}) \to N(\mu,\sigma^2)$ in distribution
+- $\frac{\sqrt{ n }(\bar{X})}{\sigma} \to N(\mu,0)$ in distribution
+
+
+#### Continuous Mapping Theorem
+- $X_{n}\to x$ in distribution $\implies$ $g(X_{n})\to g(x)$ in distribution
+- $X_{n}\to x$ in probability $\implies$ $g(X_{n})\to g(x)$ in probability
+- $X_{n}\to x$ almost surely $\implies$ $g(X_{n})\to g(x)$ almost surely
+when $g$ is a continuous function
+
+#### Slutsky's Theorem
+$X_{n}\to x$ in distribution and $Y_{n}\to c$ in probability, then
+- $X_{n}+Y_{n}\to X+c$ in distribution 
+- $X_{n}Y_{n}\to X\cdot c$ in distribution 
+- $\frac{X_{n}}{Y_{n}}\to \frac{X}{c}$ in distribution if $c\neq 0$
+
+
+#### Delta Method
+$\sqrt{ n }(Y_{n}-\theta) \to N(0,\sigma^2)$ in distribution then $g(\theta)$ exists and $g'(\theta) \neq 0$ then 
+$$
+\sqrt{ n }(g(Y_{n})-g(\theta)) \to N(0, [g'(\theta)]^2\sigma^2)
+$$
+
+#### Second Delta Method
+$\sqrt{ n }(Y_{n}-\theta) \to N(0,\sigma^2)$ in distribution then $g(\theta)$ exists and $g'(\theta) = 0$ and $g''(\theta) \neq 0$ then
+$$
+n[g(Y_{n})-g(\theta)]\to \sigma^2 \cdot \frac{g''(\theta)}{2}\cdot \chi^2_{1}
+$$
 
